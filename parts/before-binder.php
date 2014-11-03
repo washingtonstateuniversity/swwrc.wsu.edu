@@ -6,3 +6,18 @@
 <h1>Water is an essential resource for the economic, social, and cultural well-being of the state of Washington. </h1>
 </div>
 </div>
+<nav class="main-menu">
+	<img id="logo" src="/wp-content/uploads/sites/5/2014/10/SWWRC-logo-vert-rgb.png" alt="State of Washington Water Research"/><?php
+	$spine_site_args = array(
+		'theme_location'  => 'site',
+		'menu'            => 'site',
+		'container'       => false,
+		'container_class' => false,
+		'container_id'    => false,
+		'menu_class'      => null,
+		'menu_id'         => null,
+		'items_wrap'      => '<ul>%3$s</ul>',
+		'depth'           => 3,
+	);
+	wp_nav_menu( $spine_site_args );
+	?></nav>
