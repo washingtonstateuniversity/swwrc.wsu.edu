@@ -1,5 +1,4 @@
- <?php if( is_front_page() ) { ?>
-<div class="videobg">
+<?php if( is_front_page() ) { ?> <div class="videobg">
 	<div class="banner-container">
 		<div class="logo-container">
 	<img src="/wp-content/uploads/sites/354/2014/11/SWWRC-logo-vert-reverse1.png" alt="State of Washington Water Research Center" class="home-logo" />
