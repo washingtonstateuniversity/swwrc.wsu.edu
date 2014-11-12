@@ -9,7 +9,7 @@
 </div>
 <?php } ?>
 <nav class="main-menu">
-	<img id="logo" src="/wp-content/uploads/sites/354/2014/11/SWWRC-logo-vert-rgb.png" alt="State of Washington Water Research"/><?php
+	<img id="logo" src="/wp-content/uploads/sites/354/2014/11/SWWRC-logo-vert-rgb.png" alt="State of Washington Water Research"/><img id="mobilelogo" src="wp-content/uploads/sites/354/2014/11/mobilelogo.png" alt="State of Washington Water Research"/><?php
 	$spine_site_args = array(
 		'theme_location'  => 'site',
 		'menu'            => 'site',
