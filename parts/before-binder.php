@@ -8,7 +8,7 @@
 </div>
 </div>
 <?php } ?>
-<nav class="main-menu">
+<nav class="main-menu mobilenav">
 	<img id="logo" src="/wp-content/uploads/sites/354/2014/11/SWWRC-logo-vert-rgb.png" alt="State of Washington Water Research"/><img id="mobilelogo" src="wp-content/uploads/sites/354/2014/11/mobilelogo.png" alt="State of Washington Water Research"/><?php
 	$spine_site_args = array(
 		'theme_location'  => 'site',
@@ -18,7 +18,7 @@
 		'container_id'    => false,
 		'menu_class'      => null,
 		'menu_id'         => null,
-		'items_wrap'      => '<ul>%3$s</ul>',
+		'items_wrap'      => '<ul class="shownav">%3$s</ul>',
 		'depth'           => 3,
 	);
 	wp_nav_menu( $spine_site_args );
