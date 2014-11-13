@@ -16,9 +16,9 @@
 		'container'       => false,
 		'container_class' => false,
 		'container_id'    => false,
-		'menu_class'      => null,
+		'menu_class'      => 'shownav',
 		'menu_id'         => null,
-		'items_wrap'      => '<ul class="shownav">%3$s</ul>',
+		'items_wrap'      => '<ul>%3$s</ul>',
 		'depth'           => 3,
 	);
 	wp_nav_menu( $spine_site_args );
