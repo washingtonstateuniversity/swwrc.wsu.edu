@@ -16,7 +16,7 @@
 		'container'       => false,
 		'container_class' => false,
 		'container_id'    => false,
-		'menu_class'      => 'shownav',
+		'menu_class'      => null,
 		'menu_id'         => null,
 		'items_wrap'      => '<ul>%3$s</ul>',
 		'depth'           => 3,
