@@ -9,7 +9,7 @@
 </div>
 <?php } ?>
 <nav class="main-menu mobilenav">
-	<a href="/"><img id="logo" src="/wp-content/uploads/sites/354/2014/11/SWWRC-logo-vert-rgb.png" alt="State of Washington Water Research"/></a><a href="/"><img id="mobilelogo" src="wp-content/uploads/sites/354/2014/11/mobilelogo.png" alt="State of Washington Water Research"/></a><?php
+	<a href="/"><img id="logo" src="/wp-content/uploads/sites/354/2014/11/SWWRC-logo-vert-rgb.png" alt="State of Washington Water Research"/></a><img id="mobilelogo" src="wp-content/uploads/sites/354/2014/11/mobilelogo.png" alt="State of Washington Water Research"/><?php
 	$spine_site_args = array(
 		'theme_location'  => 'site',
 		'menu'            => 'site',
