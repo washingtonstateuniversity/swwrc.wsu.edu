@@ -8,6 +8,7 @@
 </div>
 </div>
 <?php } ?>
+<div id="spine">
 <a class="mobilenav" href="#"><img id="mobilelogo" src="wp-content/uploads/sites/354/2014/11/mobilelogo.png" alt="State of Washington Water Research"/></a>
 <nav class="main-menu navreg">
 	<a href="/"><img id="logo" src="/wp-content/uploads/sites/354/2014/11/SWWRC-logo-vert-rgb.png" alt="State of Washington Water Research"/></a><?php
@@ -24,3 +25,4 @@
 	);
 	wp_nav_menu( $spine_site_args );
 	?></nav>
+</div>
