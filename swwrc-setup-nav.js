@@ -9,8 +9,8 @@
 
 			// Use "current" or "active" on active li elements. Parents of these elements will automatically
 			// receive the "active" class. We check wildcards to accommodate inflexible platforms.
-			$(".main-menu li[class*=current], .main-menu nav li[class*=active]").addClass("active").parents("li").addClass("active");
-			$(".main-menu li a[class*=current], .main-menu nav li a[class*=active]").parents("li").addClass("active");
+			$(".main-menu li[class*=current], .main-menu li[class*=active]").addClass("active").parents("li").addClass("active");
+			$(".main-menu li a[class*=current], .main-menu li a[class*=active]").parents("li").addClass("active");
 
 			$(".main-menu .active:not(:has(.active))").addClass("dogeared");
 
