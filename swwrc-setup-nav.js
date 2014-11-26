@@ -5,17 +5,17 @@
 		setup_nav = function(){
 			// NAVIGATION
 			// Tag location and hierarchy
-			$("#spine nav ul,#spine ul").parents("li").addClass("parent");
+			$(".main-menu ul,.main-menu ul").parents("li").addClass("parent");
 
 			// Use "current" or "active" on active li elements. Parents of these elements will automatically
 			// receive the "active" class. We check wildcards to accommodate inflexible platforms.
-			$("#spine nav li[class*=current], #spine nav li[class*=active]").addClass("active").parents("li").addClass("active");
-			$("#spine nav li a[class*=current], #spine nav li a[class*=active]").parents("li").addClass("active");
+			$(".main-menu li[class*=current], .main-menu nav li[class*=active]").addClass("active").parents("li").addClass("active");
+			$(".main-menu li a[class*=current], .main-menu nav li a[class*=active]").parents("li").addClass("active");
 
-			$("#spine .active:not(:has(.active))").addClass("dogeared");
+			$(".main-menu .active:not(:has(.active))").addClass("dogeared");
 
 			// Couplets
-			$("#spine nav li.parent > a").each( function() {
+			$(".main-menu li.parent > a").each( function() {
 				var tar, title, classes, url;
 				tar=$(this);
 
