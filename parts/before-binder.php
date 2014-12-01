@@ -1,12 +1,14 @@
-<?php if( is_front_page() ) { ?> <div class="videobg">
-	<div class="banner-container">
-		<div class="logo-container">
-	<img src="/wp-content/uploads/sites/354/2014/11/SWWRC-logo-vert-reverse1.png" alt="State of Washington Water Research Center" class="home-logo" />
-</div>
-
-<?php if ( $cob_page_headline = cob_get_page_headline() ) : ?><h1><?php echo wp_kses_post( $cob_page_headline ); ?> </h1><?php endif; ?>
-</div>
-</div>
+<?php if( is_front_page() ) { ?>
+	<div class="videobg">
+		<div class="banner-container">
+			<div class="logo-container">
+				<img src="/wp-content/uploads/sites/354/2014/11/SWWRC-logo-vert-reverse1.png" alt="State of Washington Water Research Center" class="home-logo" />
+			</div>
+			<?php if ( $cob_page_headline = cob_get_page_headline() ) : ?>
+				<h1><?php echo wp_kses_post( $cob_page_headline ); ?></h1>
+			<?php endif; ?>
+		</div>
+	</div>
 <?php } ?>
 <a class="mobilenav" href="#"><img id="mobilelogo" src="wp-content/uploads/sites/354/2014/11/mobilelogo.png" alt="State of Washington Water Research"/></a>
 <nav class="main-menu navreg">
@@ -22,5 +24,5 @@
 		'items_wrap'      => '<ul>%3$s</ul>',
 		'depth'           => 3,
 	);
-	wp_nav_menu( $spine_site_args );
-	?></nav>
+	wp_nav_menu( $spine_site_args ); ?>
+</nav>
