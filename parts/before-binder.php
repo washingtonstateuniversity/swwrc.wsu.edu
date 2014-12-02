@@ -24,7 +24,7 @@
 <?php } ?>
 <a class="mobilenav" href="#"><img id="mobilelogo" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/mobilelogo.png' ); ?>" alt="State of Washington Water Research"/></a>
 <nav class="main-menu navreg">
-	<a href="/"><img id="logo" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/SWWRC-logo-vert-rgb.png' ); ?>" alt="State of Washington Water Research"/></a><?php
+	<a href="<?php echo esc_url( home_url() ); ?>"><img id="logo" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/SWWRC-logo-vert-rgb.png' ); ?>" alt="State of Washington Water Research"/></a><?php
 	$spine_site_args = array(
 		'theme_location'  => 'site',
 		'menu'            => 'site',
