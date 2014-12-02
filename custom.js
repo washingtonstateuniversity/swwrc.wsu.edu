@@ -14,14 +14,27 @@
 	}(jQuery));
 
 (function($){
-$(document).ready(sizeContent);
-//Every resize of window
-$(window).resize(sizeContent);
-//Dynamically assign height
-function sizeContent() {
-    var newHeight = $(window).height() + "px";
-    $(".videobg").css("height", newHeight);
-}
+	//Dynamically assign height
+	function sizeContent() {
+		var newHeight = $(window).height() + "px";
+		$(".banner-container").css("height", newHeight);
+		$("#videobg" ).css('height',newHeight );
+	}
+
+	$(document).ready(function() {
+		var newHeight = $(window).height() + "px";
+		$(".banner-container").css("height", newHeight);
+		$('#' + window.wsu_video_background.id).css('height', newHeight ).videoBG({
+			mp4: window.wsu_video_background.mp4,
+			ogv: window.wsu_video_background.ogv,
+			webm: window.wsu_video_background.webm,
+			poster: window.wsu_video_background.poster,
+			scale: window.wsu_video_background.scale,
+			zIndex: window.wsu_video_background.zIndex
+		});
+		//Every resize of window
+		$(window).resize(sizeContent);
+	});
 }(jQuery));
 
 
