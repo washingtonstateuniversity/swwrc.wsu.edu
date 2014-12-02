@@ -1,7 +1,10 @@
 <?php
 
-
-include_once( __DIR__ . '/includes/plugin-headlines.php' );
+/**
+ * Include the functionality used to load the home page's headline
+ * and video background features.
+ */
+include_once( __DIR__ . '/includes/plugin-swwrc-video.php' );
 
 add_action( 'wp_enqueue_scripts', 'swwrc_child_enqueue_scripts', 11 );
 /**

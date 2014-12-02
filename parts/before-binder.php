@@ -4,7 +4,7 @@
 			<div class="logo-container">
 				<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/SWWRC-logo-vert-reverse1.png' ); ?>" alt="State of Washington Water Research Center" class="home-logo" />
 			</div>
-			<?php if ( $cob_page_headline = cob_get_page_headline() ) : ?>
+			<?php if ( $cob_page_headline = swwrc_get_page_headline() ) : ?>
 				<h1><?php echo wp_kses_post( $cob_page_headline ); ?></h1>
 			<?php endif; ?>
 		</div>

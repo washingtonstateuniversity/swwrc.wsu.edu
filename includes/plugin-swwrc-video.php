@@ -1,5 +1,5 @@
 <?php
-class WSU_COB_Headlines {
+class WSU_SWWRC_Video {
 	/**
 	 * @var string Meta key for storing headline.
 	 */
@@ -73,7 +73,7 @@ class WSU_COB_Headlines {
 	}
 
 }
-$wsu_cob_headlines = new WSU_COB_Headlines();
+$wsu_swwrc_video = new WSU_SWWRC_Video();
 /**
  * Wrapper to retrieve an assigned page headline. Will fallback to the current page if
  * a post ID is not specified.
@@ -82,8 +82,8 @@ $wsu_cob_headlines = new WSU_COB_Headlines();
  *
  * @return mixed
  */
-function cob_get_page_headline( $post_id = 0 ) {
-	global $wsu_cob_headlines;
+function swwrc_get_page_headline( $post_id = 0 ) {
+	global $wsu_swwrc_video;
 	if ( is_404() ) {
 		return "We're sorry. We can't find the page you're looking for.";
 	}
@@ -91,5 +91,5 @@ function cob_get_page_headline( $post_id = 0 ) {
 	if ( 0 === $post_id ) {
 		$post_id = get_the_ID();
 	}
-	return $wsu_cob_headlines->get_headline( $post_id );
+	return $wsu_swwrc_video->get_headline( $post_id );
 }
