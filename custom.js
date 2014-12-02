@@ -1,19 +1,4 @@
 (function($){
-	$(document).ready(function(){
-	(function($){
-		var menuul = $(".main-menu ul");
-
-		$('.mobilenav').click(function() {
-			if(menuul.hasClass('shownav')){
-				menuul.removeClass('shownav');
-			} else {
-				menuul.addClass('shownav');
-			}
-			return(false);
-		});
-	}(jQuery));
-
-(function($){
 	//Dynamically assign height
 	function sizeContent() {
 		var newHeight = $(window).height() + "px";
@@ -34,10 +19,19 @@
 		});
 		//Every resize of window
 		$(window).resize(sizeContent);
+
+		var menuul = $(".main-menu ul");
+
+		$('.mobilenav').click(function() {
+			if(menuul.hasClass('shownav')){
+				menuul.removeClass('shownav');
+			} else {
+				menuul.addClass('shownav');
+			}
+			return(false);
+		});
 	});
 }(jQuery));
-
-
 
 (function($) {
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
