@@ -22,7 +22,14 @@ class WSU_SWWRC_Video {
 			return;
 		}
 		add_meta_box( 'wsu_cob_headlines', 'Page Headlines', array( $this, 'display_headlines_metabox' ), null, 'normal', 'high' );
+
+		$show_on_front = get_option( 'page_on_front', false );
+
+		if ( $show_on_front == get_the_ID() ) {
+			add_meta_box( 'wsu_swwrc_video', 'Home Page Videos', array( $this, 'display_videos_metabox' ), null, 'normal', 'default' );
+		}
 	}
+
 	/**
 	 * Display the metabox used to capture additional headlines for a post or page.
 	 *
@@ -37,6 +44,30 @@ class WSU_SWWRC_Video {
 		<p class="description">Primary headline to be used for the top of the page, under the logo.</p>
 		<?php
 	}
+
+	/**
+	 * Display the metabox used to capture the videos and poster image associated
+	 * with the site's video background.
+	 *
+	 * @param WP_Post $post The post object currently being edited.
+	 */
+	public function display_videos_metabox( $post ) {
+		$mp4 = get_post_meta( $post->ID, '_swwrc_home_mp4', true );
+		$ogv = get_post_meta( $post->ID, '_swwrc_home_ogv', true );
+		$web = get_post_meta( $post->ID, '_swwrc_home_webm', true );
+		$poster = get_post_meta( $post->ID, '_swwrc_home_poster', true );
+		?>
+		<label for="swwrc-home-mp4">MP4 URL:</label>
+		<input type="text" class="widefat" id="swwrc-home-mp4" name="swwrc_home_mp4" value="<?php echo esc_attr( $mp4 ); ?>" />
+		<label for="swwrc-home-ogv">OGV URL:</label>
+		<input type="text" class="widefat" id="swwrc-home-ogv" name="swwrc_home_ogv" value="<?php echo esc_attr( $ogv ); ?>" />
+		<label for="swwrc-home-web">WEBM URL:</label>
+		<input type="text" class="widefat" id="swwrc-home-web" name="swwrc_home_web" value="<?php echo esc_attr( $web ); ?>" />
+		<label for="swwrc-home-poster">Poster URL:</label>
+		<input type="text" class="widefat" id="swwrc-home-poster" name="swwrc_home_poster" value="<?php echo esc_attr( $poster ); ?>" />
+		<?php
+	}
+
 	/**
 	 * Save the subtitle and call to action assigned to the post.
 	 *
@@ -74,6 +105,7 @@ class WSU_SWWRC_Video {
 
 }
 $wsu_swwrc_video = new WSU_SWWRC_Video();
+
 /**
  * Wrapper to retrieve an assigned page headline. Will fallback to the current page if
  * a post ID is not specified.
