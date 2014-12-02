@@ -7,8 +7,11 @@
 	}
 
 	$(document).ready(function() {
+		var menuul = $('.main-menu ul');
 		var newHeight = $(window).height() + "px";
 		$(".banner-container").css("height", newHeight);
+
+		// Fire the videoBG plugin using data stored with the pageview.
 		$('#' + window.wsu_video_background.id).css('height', newHeight ).videoBG({
 			mp4: window.wsu_video_background.mp4,
 			ogv: window.wsu_video_background.ogv,
@@ -17,18 +20,14 @@
 			scale: window.wsu_video_background.scale,
 			zIndex: window.wsu_video_background.zIndex
 		});
-		//Every resize of window
+
+		// Size the content areas on every resize of the window.
 		$(window).resize(sizeContent);
 
-		var menuul = $(".main-menu ul");
-
+		// Toggle the mobile menu when it's "clicked".
 		$('.mobilenav').click(function() {
-			if(menuul.hasClass('shownav')){
-				menuul.removeClass('shownav');
-			} else {
-				menuul.addClass('shownav');
-			}
-			return(false);
+			menuul.toggleClass('shownav');
+			return false;
 		});
 	});
 
