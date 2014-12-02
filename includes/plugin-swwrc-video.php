@@ -78,17 +78,45 @@ class WSU_SWWRC_Video {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
 		}
+
 		if ( ! in_array( $post->post_type, array( 'page', 'post' ) ) ) {
 			return;
 		}
+
 		if ( 'auto-draft' === $post->post_status ) {
 			return;
 		}
+
 		if ( ! isset( $_POST['_cob_headlines_nonce'] ) || false === wp_verify_nonce( $_POST['_cob_headlines_nonce'], 'cob-headlines-nonce' ) ) {
 			return;
 		}
+
 		if ( isset( $_POST['cob_page_headline'] ) ) {
 			update_post_meta( $post_id, $this->headline_meta_key, strip_tags( $_POST['cob_page_headline'], '<br><span><em><strong>' ) );
+		}
+
+		if ( isset( $_POST['swwrc_home_mp4'] ) && ! empty( trim( $_POST['swwrc_home_mp4'] ) ) ) {
+			update_post_meta( $post_id, '_swwrc_home_mp4', esc_url( $_POST['swwrc_home_mp4'] ) );
+		} else {
+			delete_post_meta( $post_id, '_swwrc_home_mp4' );
+		}
+
+		if ( isset( $_POST['swwrc_home_ogv'] ) && ! empty( trim( $_POST['swwrc_home_ogv'] ) ) ) {
+			update_post_meta( $post_id, '_swwrc_home_ogv', esc_url( $_POST['swwrc_home_ogv'] ) );
+		} else {
+			delete_post_meta( $post_id, '_swwrc_home_ogv' );
+		}
+
+		if ( isset( $_POST['swwrc_home_web'] ) && ! empty( trim( $_POST['swwrc_home_web'] ) ) ) {
+			update_post_meta( $post_id, '_swwrc_home_webm', esc_url( $_POST['swwrc_home_web'] ) );
+		} else {
+			delete_post_meta( $post_id, '_swwrc_home_webm' );
+		}
+
+		if ( isset( $_POST['swwrc_home_poster'] ) && ! empty( trim( $_POST['swwrc_home_poster'] ) ) ) {
+			update_post_meta( $post_id, '_swwrc_home_poster', esc_url( $_POST['swwrc_home_poster'] ) );
+		} else {
+			delete_post_meta( $post_id, '_swwrc_home_poster' );
 		}
 	}
 	
