@@ -31,9 +31,7 @@
 			return(false);
 		});
 	});
-}(jQuery));
 
-(function($) {
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 		function checkposi(e,jObj){
 			var distance = $('.videobg').height() + $('.home nav').height();
