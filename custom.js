@@ -34,32 +34,30 @@
 }(jQuery));
 
 (function($) {
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-			function checkposi(e,jObj){
-				var distance = $('.videobg').height() + $('.home nav').height();
-				var touch = e.touches[0] || e.changedTouches[0];
-				var y = touch.pageY - touch.clientY;
-				
-				if(y>distance) {
-					$('.home nav').removeClass('navreg').addClass('navfix');
-				} else {
-					$('.home nav').removeClass('navfix').addClass('navreg');
-				}
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+		function checkposi(e,jObj){
+			var distance = $('.videobg').height() + $('.home nav').height();
+			var touch = e.touches[0] || e.changedTouches[0];
+			var y = touch.pageY - touch.clientY;
+
+			if(y>distance) {
+				$('.home nav').removeClass('navreg').addClass('navfix');
+			} else {
+				$('.home nav').removeClass('navfix').addClass('navreg');
 			}
-			document.addEventListener('scroll', function(e){checkposi(e,$("html"))});
-			document.addEventListener('touchstart', function(e){checkposi(e,$("html"))});
-			document.addEventListener('touchmove',  function(e){checkposi(e,$("html"))});
-			document.addEventListener('touchend', function(e){checkposi(e,$("html"))});
-		}else{
-			$(window).scroll(function() {
-				var distance = $('.videobg').height() + $('.home nav').height();
-				if($(this).scrollTop() > distance) {
-					$('.home nav').removeClass('navreg').addClass('navfix');
-				} else {
-					$('.home nav').removeClass('navfix').addClass('navreg');
-				}
-			});
 		}
-	}(jQuery));
-	});
-})(jQuery);
+		document.addEventListener('scroll', function(e){checkposi(e,$("html"))});
+		document.addEventListener('touchstart', function(e){checkposi(e,$("html"))});
+		document.addEventListener('touchmove',  function(e){checkposi(e,$("html"))});
+		document.addEventListener('touchend', function(e){checkposi(e,$("html"))});
+	}else{
+		$(window).scroll(function() {
+			var distance = $('.videobg').height() + $('.home nav').height();
+			if($(this).scrollTop() > distance) {
+				$('.home nav').removeClass('navreg').addClass('navfix');
+			} else {
+				$('.home nav').removeClass('navfix').addClass('navreg');
+			}
+		});
+	}
+}(jQuery));
