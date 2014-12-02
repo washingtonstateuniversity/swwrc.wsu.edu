@@ -131,6 +131,51 @@ class WSU_SWWRC_Video {
 		return get_post_meta( $post_id, $this->headline_meta_key, true );
 	}
 
+	/**
+	 * Retrieve the JSON data for a page containing video background information.
+	 * 
+	 * @param $post_id
+	 *
+	 * @return string
+	 */
+	public function get_json_data( $post_id ) {
+		$mp4 = get_post_meta( $post_id, '_swwrc_home_mp4', true );
+		$ogv = get_post_meta( $post_id, '_swwrc_home_ogv', true );
+		$web = get_post_meta( $post_id, '_swwrc_home_webm', true );
+		$poster = get_post_meta( $post_id, '_swwrc_home_poster', true );
+
+		$data = array(
+			'id' => 'videobg',
+			'scale' => '1',
+			'zIndex' => '0',
+		);
+
+		if ( ! empty( $mp4 ) ) {
+			$data['mp4'] = esc_url( $mp4 );
+		} else {
+			$data['mp4'] = '';
+		}
+
+		if ( ! empty( $ogv ) ) {
+			$data['ogv'] = esc_url( $ogv );
+		} else {
+			$data['ogv'] = '';
+		}
+
+		if ( ! empty( $web ) ) {
+			$data['webm'] = esc_url( $web );
+		} else {
+			$data['webm'] = '';
+		}
+
+		if ( ! empty( $poster ) ) {
+			$data['poster'] = esc_url( $poster );
+		} else {
+			$data['poster'] = '';
+		}
+
+		return json_encode( $data );
+	}
 }
 $wsu_swwrc_video = new WSU_SWWRC_Video();
 
@@ -152,4 +197,23 @@ function swwrc_get_page_headline( $post_id = 0 ) {
 		$post_id = get_the_ID();
 	}
 	return $wsu_swwrc_video->get_headline( $post_id );
+}
+
+/**
+ * Wrapper to retrieve assigned video data for the home page.
+ *
+ * @param int $post_id
+ *
+ * @return bool|string False if 404, JSON string if available.
+ */
+function swwrc_get_video_json_data( $post_id = 0 ) {
+	global $wsu_swwrc_video;
+	if ( is_404() ) {
+		return false;
+	}
+	$post_id = absint( $post_id );
+	if ( 0 === $post_id ) {
+		$post_id = get_the_ID();
+	}
+	return $wsu_swwrc_video->get_json_data( $post_id );
 }

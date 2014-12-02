@@ -11,14 +11,7 @@
 	</div>
 	<script type='text/javascript'>
 		/* <![CDATA[ */
-		var wsu_video_background = {
-			"id":"videobg",
-			"mp4":"http:\/\/wp.wsu.dev\/swwrc\/wp-content\/uploads\/sites\/12\/2014\/12\/iStock_000022735803Big-Web.mp4",
-			"ogv":"http:\/\/wp.wsu.dev\/swwrc\/wp-content\/uploads\/sites\/12\/2014\/12\/iStock_000022735803Big-Web.oggtheora.ogv",
-			"webm":"http:\/\/wp.wsu.dev\/swwrc\/wp-content\/uploads\/sites\/12\/2014\/12\/iStock_000022735803Big-Web.mp4",
-			"poster":"",
-			"scale":"1",
-			"zIndex":"0"};
+		var wsu_video_background = <?php echo swwrc_get_video_json_data(); ?>
 		/* ]]> */
 	</script>
 <?php } ?>
