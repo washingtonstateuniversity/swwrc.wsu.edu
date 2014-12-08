@@ -14,3 +14,9 @@ function swwrc_child_enqueue_scripts() {
 	wp_enqueue_script( 'swwrc-videobg', get_stylesheet_directory_uri() . '/js/jQuery.videobg.js', array( 'jquery' ), spine_get_script_version(), true );
 	wp_enqueue_script( 'swwrc-custom', get_stylesheet_directory_uri() . '/custom.js', array( 'jquery' ), spine_get_script_version(), true );
 }
+function new_excerpt_length($length) 
+{
+    return 300;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+<p> <?php the_excerpt(); ?> </p>
