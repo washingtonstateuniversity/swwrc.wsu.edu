@@ -11,15 +11,17 @@
 		var newHeight = $(window).height() + "px";
 		$(".banner-container").css("height", newHeight);
 
-		// Fire the videoBG plugin using data stored with the pageview.
-		$('#' + window.wsu_video_background.id).css('height', newHeight ).videoBG({
-			mp4: window.wsu_video_background.mp4,
-			ogv: window.wsu_video_background.ogv,
-			webm: window.wsu_video_background.webm,
-			poster: window.wsu_video_background.poster,
-			scale: window.wsu_video_background.scale,
-			zIndex: window.wsu_video_background.zIndex
-		});
+		if ( 0 < $('.home').length ) {
+			// Fire the videoBG plugin using data stored with the pageview.
+			$('#' + window.wsu_video_background.id).css('height', newHeight ).videoBG({
+				mp4: window.wsu_video_background.mp4,
+				ogv: window.wsu_video_background.ogv,
+				webm: window.wsu_video_background.webm,
+				poster: window.wsu_video_background.poster,
+				scale: window.wsu_video_background.scale,
+				zIndex: window.wsu_video_background.zIndex
+			});
+		}
 
 		// Size the content areas on every resize of the window.
 		$(window).resize(sizeContent);
