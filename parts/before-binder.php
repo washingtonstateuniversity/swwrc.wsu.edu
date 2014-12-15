@@ -15,7 +15,7 @@
 		/* ]]> */
 	</script>
 <?php } ?>
-<a class="mobilenav" href="#"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<a class="mobilenav" href="#"><div id="mobilelogo"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 255.8 42.2" enable-background="new 0 0 255.8 42.2" xml:space="preserve">
 <g>
 	<g>
@@ -101,7 +101,7 @@
 			c-0.3-0.3-0.8-0.4-1.4-0.4h-2.5V29.6z"/>
 	</g>
 </g>
-</svg>
+</svg></div>
 </a>
 <nav class="main-menu navreg">
 	<div id="logo"><a href="<?php echo esc_url( home_url() ); ?>"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
