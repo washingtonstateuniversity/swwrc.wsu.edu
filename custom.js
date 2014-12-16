@@ -35,6 +35,10 @@
 
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 		function checkposi(e,jObj){
+			if ( typeof e.touches === "undefined" && typeof e.changedTouches === "undefined" ) {
+				return;
+			}
+
 			var distance = $('.videobg').height() + $('.home nav').height();
 			var touch = e.touches[0] || e.changedTouches[0];
 			var y = touch.pageY - touch.clientY;
