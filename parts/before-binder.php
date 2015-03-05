@@ -1,20 +1,4 @@
-<?php if( is_front_page() ) { ?>
-	<div id="videobg" class="videobg">
-		<div class="banner-container">
-			<div class="logo-container">
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/SWWRC-logo-vert-reverse1.png' ); ?>" alt="State of Washington Water Research Center" class="home-logo" />
-			</div>
-			<?php if ( $cob_page_headline = swwrc_get_page_headline() ) : ?>
-				<h1><?php echo wp_kses_post( $cob_page_headline ); ?></h1>
-			<?php endif; ?>
-		</div>
-	</div>
-	<script type='text/javascript'>
-		/* <![CDATA[ */
-		var wsu_video_background = <?php echo swwrc_get_video_json_data(); ?>
-		/* ]]> */
-	</script>
-<?php } ?>
+
 <a class="mobilenav" href="#"><div id="mobilelogo"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 255.8 42.2" enable-background="new 0 0 255.8 42.2" xml:space="preserve">
 <g>
@@ -238,3 +222,20 @@
 	);
 	wp_nav_menu( $spine_site_args ); ?>
 </nav>
+<?php if( is_front_page() ) { ?>
+	<div id="videobg" class="videobg">
+		<div class="banner-container">
+			<div class="logo-container">
+				<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/SWWRC-logo-vert-reverse1.png' ); ?>" alt="State of Washington Water Research Center" class="home-logo" />
+			</div>
+			<?php if ( $cob_page_headline = swwrc_get_page_headline() ) : ?>
+				<h1><?php echo wp_kses_post( $cob_page_headline ); ?></h1>
+			<?php endif; ?>
+		</div>
+	</div>
+	<script type='text/javascript'>
+		/* <![CDATA[ */
+		var wsu_video_background = <?php echo swwrc_get_video_json_data(); ?>
+		/* ]]> */
+	</script>
+<?php } ?>
