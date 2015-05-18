@@ -189,7 +189,7 @@ html {
   html body.archive section {
     margin-top: 7em; }
     html body.archive section article h2.article-title {
-      padding-top: 1em;
+      padding-top: 2em;
       padding-bottom: .1em !important; }
     html body.archive section article .source {
       color: #4d4d4d;
@@ -199,6 +199,8 @@ html {
         display: none; }
     html body.archive section article .article-summary {
       padding-bottom: 1em; }
+  html body.archive footer.main-footer.archive-footer {
+    display: none; }
 
 /* html */
 /* Media Queries */
