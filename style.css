@@ -9,10 +9,3 @@ Version: 0.1.1
 License: GPLv2 (or later)
 Tags: light
 */
-
-/* Allows for the resizing of video with the window. */
-.videoBG,
-.videoBG_wrapper {
-	width: 100% !important;
-	height: 100% !important;
-}

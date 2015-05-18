@@ -1,4 +1,4 @@
-<footer>
+<footer class="main-footer-af">
 		<address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 			<meta itemprop="name" content="<?php echo esc_attr( spine_get_option( 'contact_name' ) ); ?>">
 	<meta itemprop="department" content="<?php echo esc_attr( spine_get_option( 'contact_department' ) ); ?>">
@@ -12,7 +12,7 @@
 	<meta itemprop="telephone" content="<?php echo esc_attr( spine_get_option( 'contact_telephone' ) ); ?>">
 	<?php echo esc_attr( spine_get_option( 'contact_telephone' ) ); ?><br />
 	<meta itemprop="email" content="<?php echo esc_attr( spine_get_option( 'contact_email' ) ); ?>">
-	<a href="mailto:<?php echo esc_attr( spine_get_option( 'contact_email' ) ); ?><"><?php echo esc_attr( spine_get_option( 'contact_email' ) ); ?></a>
+	<a href="mailto:<?php echo esc_attr( spine_get_option( 'contact_email' ) ); ?>"><?php echo esc_attr( spine_get_option( 'contact_email' ) ); ?></a>
 	
 	<?php
 		$contact_point = spine_get_option( 'contact_ContactPoint' );

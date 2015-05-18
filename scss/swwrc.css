@@ -1,0 +1,335 @@
+/* Declare varibables */
+/* Mixins */
+/* Start nesting */
+html {
+  background-color: #fff !important;
+  height: 100%;
+  text-rendering: optimizeLegibility;
+  /* body */
+  /* home specific styles */
+  /* archive specific styles */ }
+  html body {
+    color: #4d4d4d;
+    font-family: "Open Sans";
+    /* jacket */ }
+    html body #spine, html body #mobilelogo, html body header.main-header {
+      display: none; }
+    html body #jacket {
+      height: 100%;
+      border-left: 8px solid #003286;
+      /* binder */
+      /* main-menu */ }
+      html body #jacket #binder {
+        /* main */ }
+        html body #jacket #binder main {
+          margin-left: 8px; }
+          html body #jacket #binder main h1, html body #jacket #binder main h2, html body #jacket #binder main h3, html body #jacket #binder main h4, html body #jacket #binder main h5, html body #jacket #binder main header {
+            font-family: "palatino";
+            font-weight: 500; }
+          html body #jacket #binder main h1 {
+            font-size: 2.5em;
+            padding-top: 2em; }
+          html body #jacket #binder main h2 {
+            font-size: 2em;
+            padding-bottom: 1em; }
+          html body #jacket #binder main h3 {
+            padding-top: 1em; }
+          html body #jacket #binder main aside header {
+            font-size: 1.4em;
+            padding-bottom: 1em; }
+          html body #jacket #binder main aside ul li {
+            padding-bottom: .8em; }
+          html body #jacket #binder main p, html body #jacket #binder main ol, html body #jacket #binder main ul {
+            font-size: 1.1em;
+            line-height: 1.6em; }
+            html body #jacket #binder main p ~ p, html body #jacket #binder main ol ~ p, html body #jacket #binder main ul ~ p {
+              padding-bottom: 1.6em; }
+          html body #jacket #binder main a {
+            color: #2a64ac; }
+            html body #jacket #binder main a:hover {
+              color: #fff;
+              background-color: #23282D; }
+          html body #jacket #binder main .page {
+            padding-top: 3em; }
+          html body #jacket #binder main .two p, html body #jacket #binder main .two aside {
+            word-break: break-word; }
+          html body #jacket #binder main .featured-image {
+            height: 300px;
+            margin-top: 0px; }
+      html body #jacket .main-menu {
+        font-family: "Open Sans";
+        font-size: 1.2em;
+        width: 100%;
+        background-color: #fff;
+        margin-top: 0;
+        top: 0;
+        z-index: 201;
+        position: fixed; }
+        html body #jacket .main-menu #logo {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 8%;
+          margin-right: 2%; }
+          html body #jacket .main-menu #logo img {
+            padding-top: 20px;
+            padding-bottom: 10px; }
+        html body #jacket .main-menu ul {
+          text-transform: uppercase;
+          display: inline-block;
+          text-align: center;
+          margin-top: 0;
+          margin-bottom: 0;
+          padding-top: 0;
+          padding-bottom: 0;
+          padding-right: 0;
+          padding-left: 1em; }
+          html body #jacket .main-menu ul li {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: 0;
+            margin-left: -5px;
+            padding: 0;
+            display: inline-block; }
+            html body #jacket .main-menu ul li a {
+              font-weight: 100;
+              margin: 0;
+              padding-top: 28px;
+              padding-bottom: 28px;
+              padding-left: 15px;
+              padding-right: 15px;
+              color: #2a64ac;
+              display: block;
+              height: 100%; }
+              html body #jacket .main-menu ul li a:hover {
+                margin: 0;
+                display: block;
+                height: 100%;
+                color: #fff;
+                background-color: #23282D; }
+            html body #jacket .main-menu ul li.current a {
+              background-color: #23282D;
+              color: #fff; }
+            html body #jacket .main-menu ul li ul {
+              display: none;
+              visibility: hidden;
+              text-align: left;
+              position: absolute;
+              background-color: #fff;
+              border-left: 1px solid #003286;
+              top: 78px; }
+            html body #jacket .main-menu ul li:hover ul {
+              padding: 0;
+              background-color: #fff;
+              display: block;
+              visibility: visible;
+              opacity: 1;
+              width: 300px; }
+            html body #jacket .main-menu ul li li {
+              margin-left: 1px;
+              display: block; }
+              html body #jacket .main-menu ul li li a {
+                padding: 14px; }
+      html body #jacket footer.main-footer-af {
+        width: 80%;
+        text-align: center;
+        border-top: 1px solid #4d4d4d;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2em;
+        padding-bottom: 1.5em;
+        font-size: 1.1em;
+        line-height: 1.6em;
+        color: #4d4d4d;
+        font-family: "Open Sans"; }
+        html body #jacket footer.main-footer-af a {
+          color: #2a64ac; }
+          html body #jacket footer.main-footer-af a:hover {
+            color: #fff;
+            background-color: #23282D; }
+  html body.home #jacket {
+    border-left: none; }
+    html body.home #jacket .videoBG, html body.home #jacket .videoBG_wrapper {
+      width: 100% !important;
+      height: 100% !important; }
+      html body.home #jacket .videoBG .banner-container .logo-container, html body.home #jacket .videoBG_wrapper .banner-container .logo-container {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 10%; }
+        html body.home #jacket .videoBG .banner-container .logo-container img, html body.home #jacket .videoBG_wrapper .banner-container .logo-container img {
+          width: 100%;
+          border-bottom: 1px solid #fff;
+          padding-bottom: 3em; }
+    html body.home #jacket .main-menu {
+      font-size: 1.4em;
+      position: relative;
+      margin-top: -140px;
+      margin-bottom: 80px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      background-color: transparent; }
+      html body.home #jacket .main-menu #logo {
+        display: none; }
+      html body.home #jacket .main-menu ul {
+        margin: 0;
+        padding: 0; }
+        html body.home #jacket .main-menu ul li a {
+          padding-top: 8px;
+          padding-bottom: 8px;
+          color: #fff; }
+          html body.home #jacket .main-menu ul li a:hover {
+            background-color: #fff;
+            color: #003286; }
+        html body.home #jacket .main-menu ul li.current a {
+          background-color: #fff;
+          color: #003286; }
+  html body.archive section {
+    margin-top: 7em; }
+    html body.archive section article h2.article-title {
+      padding-top: 1em;
+      padding-bottom: .1em !important; }
+    html body.archive section article .source {
+      color: #4d4d4d;
+      font-family: "Open Sans";
+      padding-bottom: 2em; }
+      html body.archive section article .source .article-author {
+        display: none; }
+    html body.archive section article .article-summary {
+      padding-bottom: 1em; }
+
+/* html */
+/* Media Queries */
+@media screen and (max-width: 910px) {
+  html {
+    /* body */ }
+    html body {
+      /* main-menu */
+      /* mobilenav */ }
+      html body .main-menu {
+        position: fixed;
+        margin: 0;
+        top: 0;
+        height: 0;
+        z-index: 200; }
+        html body .main-menu #logo {
+          display: none !important; }
+        html body .main-menu ul {
+          border-top: 1px solid #f4f4f4;
+          width: 100%;
+          background-color: #fff;
+          float: left;
+          display: none !important;
+          padding-left: 0;
+          padding-right: 0;
+          top: 65px;
+          margin-right: 0;
+          margin-left: -8px;
+          position: absolute; }
+          html body .main-menu ul.shownav {
+            display: block !important; }
+          html body .main-menu ul li {
+            width: 100%;
+            padding: 0;
+            float: left;
+            border-bottom: 1px solid #f4f4f4; }
+            html body .main-menu ul li:last-of-type {
+              border-bottom: none; }
+            html body .main-menu ul li:hover ul {
+              position: relative;
+              padding: 0;
+              margin: 0; }
+            html body .main-menu ul li a {
+              font-size: 150%; }
+            html body .main-menu ul li ul {
+              top: 0;
+              width: 100%;
+              margin-top: 14px;
+              margin-bottom: 0;
+              margin-right: 0;
+              padding: 0;
+              display: block; }
+              html body .main-menu ul li ul li {
+                margin-left: 4px;
+                background-color: #fff;
+                text-align: center;
+                border: none; }
+                html body .main-menu ul li ul li a {
+                  color: #4d4d4d;
+                  border-bottom: 1px solid #23282D; }
+      html body .mobilenav {
+        width: 100% !important;
+        border-top: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 201;
+        height: 65px;
+        margin-top: 0;
+        padding: 0;
+        cursor: pointer;
+        background-position: 90% center;
+        background-color: #fff;
+        display: block; }
+        html body .mobilenav:hover {
+          background-color: #f4f4f4; }
+        html body .mobilenav #mobilelogo {
+          display: block; }
+          html body .mobilenav #mobilelogo svg {
+            display: inline-block;
+            margin-left: 2em;
+            margin-top: 10px;
+            height: 45px; }
+        html body .mobilenav img.menuicon {
+          display: inline-block;
+          top: 30px;
+          right: 20px;
+          position: absolute; }
+    html body.home #jacket .main-menu {
+      position: absolute; }
+      html body.home #jacket .main-menu ul {
+        top: 200px !important; }
+        html body.home #jacket .main-menu ul li a {
+          color: #2a64ac !important; }
+          html body.home #jacket .main-menu ul li a:hover {
+            background-color: #23282D !important;
+            color: #fff !important; }
+
+  /* html */ }
+/* max-width:989px */
+@media screen and (max-width: 791px) {
+  html body main figure.featured-image {
+    margin-top: 0 !important; }
+
+  nav.main-menu ul li a {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+    font-size: 100% !important; } }
+@media screen and (min-width: 490px) and (max-width: 790px) {
+  html body #jacket .videoBG .banner-container .logo-container, html body #jacket .videoBG_wrapper .banner-container .logo-container {
+    width: 500px !important;
+    padding-top: 50% !important; } }
+@media screen and (max-width: 491px) {
+  html body #jacket .videoBG .banner-container .logo-container, html body #jacket .videoBG_wrapper .banner-container .logo-container {
+    width: 300px !important;
+    padding-top: 50% !important; }
+  html body .mobilenav #mobilelogo svg {
+    width: 200px;
+    display: inline-block; }
+  html body .mobilenav img.menuicon {
+    display: inline-block;
+    top: 30px;
+    right: 10px;
+    position: absolute; } }
+/* Height breaks */
+@media screen and (max-height: 550px) {
+  html body.home #jacket .videoBG_wrapper .banner-container .logo-container {
+    padding-top: 5% !important; } }
+@media screen and (max-height: 480px) {
+  body.home #jacket .videoBG_wrapper .banner-container .logo-container {
+    padding-top: 1% !important; }
+  body.home #jacket .main-menu {
+    margin-top: -100px !important; } }
+
+/*# sourceMappingURL=swwrc.css.map */
