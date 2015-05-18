@@ -25,7 +25,7 @@ html {
 	text-rendering: optimizeLegibility;
 		body {
 			@include type($font-body);
-				#spine,#mobilelogo, header.main-header {
+				#spine,#mobilelogo, header.main-header, img.menuicon {
 					display:none;
 				}
 				#jacket {
@@ -178,6 +178,7 @@ html {
 					margin-right:auto;
 					margin-top:2em;
 					padding-bottom:1.5em;
+					padding-top:1.5em;
 					font-size:1.1em;
 					line-height: 1.6em;
 					@include type($font-body);
