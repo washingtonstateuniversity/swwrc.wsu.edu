@@ -12,16 +12,16 @@
 			$announcement_option = get_option( 'announcement_settings' );
 
 			if ( $announcement_option && isset( $announcement_option['category_id'] ) ) {
-				$annoucement_query = new WP_Query( array(
+				$announcement_query = new WP_Query( array(
 					'category__in' => absint( $announcement_option['category_id'] ),
 					'posts_per_page' => 1,
 				) );
 
-				if ( $annoucement_query->have_posts() ) {
-					while ( $annoucement_query->have_posts() ) {
-						$annoucement_query->the_post();
+				if ( $announcement_query->have_posts() ) {
+					while ( $announcement_query->have_posts() ) {
+						$announcement_query->the_post();
 						?>
-						<div class="swwrc-annoucement">
+						<div class="swwrc-announcement">
 							<h2><?php the_title(); ?></h2>
 							<?php the_content(); ?>
 						</div>
