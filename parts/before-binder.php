@@ -1,5 +1,4 @@
-
-<?php if( is_front_page() ) { ?>
+<?php if ( is_front_page() ) { ?>
 	<div id="videobg" class="videobg">
 		<div class="banner-container">
 			<div class="logo-container">
