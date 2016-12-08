@@ -11,7 +11,7 @@
 			<?php
 			$announcement_option = get_option( 'announcement_settings' );
 
-			if ( $announcement_option && isset( $announcement_option['category_id'] ) ) {
+			if ( $announcement_option && isset( $announcement_option['category_id'] ) && '' !== $announcement_option['category_id'] ) {
 				$announcement_query = new WP_Query( array(
 					'category__in' => absint( $announcement_option['category_id'] ),
 					'posts_per_page' => 1,
