@@ -22,7 +22,6 @@
 						$announcement_query->the_post();
 						?>
 						<div class="swwrc-announcement">
-							<h2><?php the_title(); ?></h2>
 							<?php the_content(); ?>
 						</div>
 						<?php
