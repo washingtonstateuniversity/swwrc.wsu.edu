@@ -1,5 +1,4 @@
-
-<?php if( is_front_page() ) { ?>
+<?php if ( is_front_page() ) { ?>
 	<div id="videobg" class="videobg">
 		<div class="banner-container">
 			<div class="logo-container">
@@ -8,6 +7,30 @@
 			<?php if ( $cob_page_headline = swwrc_get_page_headline() ) : ?>
 				<h1><?php echo wp_kses_post( $cob_page_headline ); ?></h1>
 			<?php endif; ?>
+
+			<?php
+			$announcement_option = get_option( 'announcement_settings' );
+
+			if ( $announcement_option && isset( $announcement_option['category_id'] ) && '' !== $announcement_option['category_id'] ) {
+				$announcement_query = new WP_Query( array(
+					'category__in' => absint( $announcement_option['category_id'] ),
+					'posts_per_page' => 1,
+				) );
+
+				if ( $announcement_query->have_posts() ) {
+					while ( $announcement_query->have_posts() ) {
+						$announcement_query->the_post();
+						?>
+						<div class="swwrc-announcement">
+							<?php the_content(); ?>
+						</div>
+						<?php
+					}
+				}
+				wp_reset_postdata();
+			}
+
+			?>
 		</div>
 	</div>
 	<script type='text/javascript'>

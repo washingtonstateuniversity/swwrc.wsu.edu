@@ -161,6 +161,18 @@ html {
           width: 100%;
           border-bottom: 1px solid #fff;
           padding-bottom: 3em; }
+      html body.home #jacket .videoBG .banner-container .swwrc-announcement, html body.home #jacket .videoBG_wrapper .banner-container .swwrc-announcement {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1%;
+        padding: .8em;
+        background: #003286;
+        color: #fff; }
+        html body.home #jacket .videoBG .banner-container .swwrc-announcement a, html body.home #jacket .videoBG_wrapper .banner-container .swwrc-announcement a {
+          color: #fff; }
+      html body.home #jacket .videoBG .banner-container .swwrc-announcement:hover, html body.home #jacket .videoBG_wrapper .banner-container .swwrc-announcement:hover {
+        background: #23282D; }
     html body.home #jacket .main-menu {
       font-size: 1.4em;
       position: relative;

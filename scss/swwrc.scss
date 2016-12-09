@@ -210,6 +210,21 @@ html {
 					 			padding-bottom:3em;
 					 		}
 					 	}
+						.swwrc-announcement {
+							width: 600px;
+							margin-left:auto;
+					 		margin-right:auto;
+							margin-top: 1%;
+							padding: .8em;
+							background: $brand-color;
+							color: $foundation-color;
+								a {
+									color: $foundation-color;
+								}
+						}
+						.swwrc-announcement:hover  {
+							background: #23282D;
+						}
 					 }
 				}
 				.main-menu {
@@ -399,8 +414,8 @@ html {
 		}
 	} /* html */
 } /* max-width:989px */
-			
-@media screen and (max-width : 791px) { 
+
+@media screen and (max-width : 791px) {
 	html {
 		body {
 			main {
@@ -496,7 +511,7 @@ html {
 				}
 			    .main-menu {
 			    	margin-top:-100px !important;
-			    }	
+			    }
 			}
 	}
 }
