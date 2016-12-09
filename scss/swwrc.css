@@ -167,10 +167,10 @@ html {
         margin-right: auto;
         margin-top: 1%;
         padding: .8em;
-        background: #003286;
-        color: #fff; }
+        background: #fff;
+        color: #003286; }
         html body.home #jacket .videoBG .banner-container .swwrc-announcement a, html body.home #jacket .videoBG_wrapper .banner-container .swwrc-announcement a {
-          color: #fff; }
+          color: #003286; }
       html body.home #jacket .videoBG .banner-container .swwrc-announcement:hover, html body.home #jacket .videoBG_wrapper .banner-container .swwrc-announcement:hover {
         background: #23282D; }
     html body.home #jacket .main-menu {
