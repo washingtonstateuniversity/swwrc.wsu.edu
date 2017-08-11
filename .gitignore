@@ -1,2 +1,5 @@
-
-.sass-cache/4dac6c32c7c61d88e07181da8835653a796ff330/swwrc.scssc
+.DS_Store
+node_modules
+vendor
+composer.lock
+style.css.map
