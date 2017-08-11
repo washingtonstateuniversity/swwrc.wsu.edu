@@ -23,7 +23,7 @@ add_action( 'pre_get_posts', 'projects_104b' );
 function projects_104b( $query ) {
 	if ( is_category( '104b' ) && $query->is_main_query() ) {
 		$query->set( 'post_type', array(
-			'wsuwp_uc_project'
+			'wsuwp_uc_project',
 		) );
 	}
 }
