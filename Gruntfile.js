@@ -41,7 +41,7 @@ module.exports = function( grunt ) {
 
 		jscs: {
 			scripts: {
-				src: [ "Gruntfile.js", "src/js/*.js" ],
+				src: [ "Gruntfile.js", "js/*.js", "!js/jQuery.videobg.js" ],
 				options: {
 					preset: "jquery",
 					requireCamelCaseOrUpperCaseIdentifiers: false, // We rely on name_name too much to change them all.
@@ -65,7 +65,7 @@ module.exports = function( grunt ) {
 				}
 			},
 			theme_scripts: {
-				src: [ "src/js/*.js" ],
+				src: [ "js/*.js", "!js/jQuery.videobg.js" ],
 				options: {
 					bitwise: true,
 					curly: true,

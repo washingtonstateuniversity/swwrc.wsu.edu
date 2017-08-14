@@ -24,7 +24,7 @@ add_action( 'wp_enqueue_scripts', 'swwrc_child_enqueue_scripts', 11 );
  */
 function swwrc_child_enqueue_scripts() {
 	wp_enqueue_script( 'swwrc-videobg', get_stylesheet_directory_uri() . '/js/jQuery.videobg.js', array( 'jquery' ), wrc_theme_version(), true );
-	wp_enqueue_script( 'swwrc-custom', get_stylesheet_directory_uri() . '/custom.js', array( 'jquery' ), wrc_theme_version(), true );
+	wp_enqueue_script( 'swwrc-custom', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), wrc_theme_version(), true );
 }
 
 add_action( 'pre_get_posts', 'projects_104b' );
