@@ -141,3 +141,26 @@ function swwrc_announcement_settings_page() {
 	</div>
 	<?php
 }
+
+add_filter( 'wsu_content_syndicate_host_data', 'swwrc_filter_syndicate_host_data', 10, 2 );
+/**
+ * Filter the thumbnail used from a remote host with WSU Content Syndicate.
+ *
+ * @param object $subset Data associated with a single remote item.
+ * @param object $post   Original data used to build the subset.
+ *
+ * @return object Modified data.
+ */
+function swwrc_filter_syndicate_host_data( $subset, $post ) {
+	if ( isset( $post->featured_media ) && isset( $subset->featured_media ) ) {
+		if ( isset( $subset->featured_media->media_details->sizes->{'spine-medium_size'} ) ) {
+			$subset->thumbnail = $subset->featured_media->media_details->sizes->{'spine-medium_size'}->source_url;
+		} else {
+			$subset->thumbnail = $subset->featured_media->source_url;
+		}
+	} else {
+		$subset->thumbnail = false;
+	}
+
+	return $subset;
+}
