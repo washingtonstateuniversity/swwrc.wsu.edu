@@ -6,6 +6,11 @@
  */
 include_once( __DIR__ . '/includes/plugin-swwrc-video.php' );
 
+/**
+ * Include custom search functionality.
+ */
+include_once( __DIR__ . '/includes/custom-search.php' );
+
 add_filter( 'spine_child_theme_version', 'wrc_theme_version' );
 /**
  * Provide a theme version for use in cache busting.
