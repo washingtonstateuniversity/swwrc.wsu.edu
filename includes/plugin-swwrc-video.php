@@ -18,14 +18,14 @@ class WSU_SWWRC_Video {
 	 * @param string $post_type Current post type screen being displayed.
 	 */
 	public function add_meta_boxes( $post_type ) {
-		if ( ! in_array( $post_type, array( 'page', 'post' ) ) ) {
+		if ( ! in_array( $post_type, array( 'page', 'post' ), true ) ) {
 			return;
 		}
 		add_meta_box( 'wsu_cob_headlines', 'Page Headlines', array( $this, 'display_headlines_metabox' ), null, 'normal', 'high' );
 
 		$show_on_front = get_option( 'page_on_front', false );
 
-		if ( $show_on_front == get_the_ID() ) {
+		if ( get_the_ID() === $show_on_front ) {
 			add_meta_box( 'wsu_swwrc_video', 'Home Page Videos', array( $this, 'display_videos_metabox' ), null, 'normal', 'default' );
 		}
 	}
@@ -79,7 +79,7 @@ class WSU_SWWRC_Video {
 			return;
 		}
 
-		if ( ! in_array( $post->post_type, array( 'page', 'post' ) ) ) {
+		if ( ! in_array( $post->post_type, array( 'page', 'post' ), true ) ) {
 			return;
 		}
 
@@ -119,7 +119,7 @@ class WSU_SWWRC_Video {
 			delete_post_meta( $post_id, '_swwrc_home_poster' );
 		}
 	}
-	
+
 	/**
 	 * Retrieve the assigned headline of a page.
 	 *
@@ -133,7 +133,7 @@ class WSU_SWWRC_Video {
 
 	/**
 	 * Retrieve the JSON data for a page containing video background information.
-	 * 
+	 *
 	 * @param $post_id
 	 *
 	 * @return string
@@ -174,7 +174,7 @@ class WSU_SWWRC_Video {
 			$data['poster'] = '';
 		}
 
-		return json_encode( $data );
+		return wp_json_encode( $data );
 	}
 }
 $wsu_swwrc_video = new WSU_SWWRC_Video();
