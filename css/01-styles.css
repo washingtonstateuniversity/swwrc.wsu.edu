@@ -192,6 +192,10 @@ main .two aside {
 	padding: 14px;
 }
 
+.main-menu .swwrc-site-search-form {
+	display: inline-block;
+}
+
 .main-footer-af {
 	width: 80%;
 	text-align: center;
@@ -329,6 +333,13 @@ main .two aside {
 }
 
 /* Media Queries */
+@media screen and (min-width: 990px) {
+
+	.admin-bar .main-menu {
+		top: 32px;
+	}
+}
+
 @media screen and (max-width: 910px) {
 
 	.main-menu {
