@@ -11,6 +11,11 @@ include_once( __DIR__ . '/includes/plugin-swwrc-video.php' );
  */
 include_once( __DIR__ . '/includes/custom-search.php' );
 
+/**
+ * Include University Center Objects customizations.
+ */
+include_once( __DIR__ . '/includes/university-center-objects.php' );
+
 add_filter( 'spine_child_theme_version', 'wrc_theme_version' );
 /**
  * Provide a theme version for use in cache busting.
