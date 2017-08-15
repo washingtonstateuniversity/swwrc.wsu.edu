@@ -4,33 +4,6 @@
 			<div class="logo-container">
 				<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/SWWRC-logo-vert-reverse1.png' ); ?>" alt="State of Washington Water Research Center" class="home-logo" />
 			</div>
-			<?php if ( swwrc_get_page_headline() ) : ?>
-				<h1><?php echo wp_kses_post( swwrc_get_page_headline() ); ?></h1>
-			<?php endif; ?>
-
-			<?php
-			$announcement_option = get_option( 'announcement_settings' );
-
-			if ( $announcement_option && isset( $announcement_option['category_id'] ) && '' !== $announcement_option['category_id'] ) {
-				$announcement_query = new WP_Query( array(
-					'category__in' => absint( $announcement_option['category_id'] ),
-					'posts_per_page' => 1,
-				) );
-
-				if ( $announcement_query->have_posts() ) {
-					while ( $announcement_query->have_posts() ) {
-						$announcement_query->the_post();
-						?>
-						<div class="swwrc-announcement">
-							<?php the_content(); ?>
-						</div>
-						<?php
-					}
-				}
-				wp_reset_postdata();
-			}
-
-			?>
 		</div>
 	</div>
 	<script type='text/javascript'>

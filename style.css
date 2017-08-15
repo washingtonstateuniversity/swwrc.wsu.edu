@@ -386,24 +386,6 @@ main .two aside {
 	padding-bottom: 3em;
 }
 
-.home .swwrc-announcement {
-	width: 600px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 1%;
-	padding: .8em;
-	background: #fff;
-	color: #003286;
-}
-
-.home .swwrc-announcement a {
-	color: #003286;
-}
-
-.home .swwrc-announcement:hover {
-	background: #23282d;
-}
-
 .home .wsuwp-content-syndicate-list {
 	list-style: none;
 }
