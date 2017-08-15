@@ -37,6 +37,7 @@ function swwrc_child_enqueue_scripts() {
 
 	if ( is_front_page() ) {
 		wp_enqueue_script( 'swwrc-videobg', get_stylesheet_directory_uri() . '/js/jQuery.videobg.js', array( 'jquery' ), wrc_theme_version(), true );
+		wp_enqueue_script( 'swwrc-home', get_stylesheet_directory_uri() . '/js/home.js', array( 'jquery' ), wrc_theme_version(), true );
 	}
 }
 
