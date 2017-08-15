@@ -4,6 +4,7 @@ namespace SWWRC\Site_Search;
 
 add_filter( 'pre_get_posts', 'SWWRC\Site_Search\include_uc_post_types' );
 add_shortcode( 'swwrc_site_search', 'SWWRC\Site_Search\display_swwrc_site_search' );
+add_filter( 'wp_nav_menu_items', 'SWWRC\Site_Search\add_search_to_menu', 10, 2 );
 
 /**
  * Includes University Center post types in search results.
@@ -48,4 +49,22 @@ function display_swwrc_site_search() {
 	$content = ob_get_clean();
 
 	return $content;
+}
+
+/**
+ * Filters the nav items attached to the global navigation and appends a search form.
+ *
+ * @since 0.5.0
+ *
+ * @param $items
+ * @param $args
+ *
+ * @return string
+ */
+function add_search_to_menu( $items, $args ) {
+	if ( 'site' !== $args->theme_location ) {
+		return $items;
+	}
+
+	return $items . '<li class="search">' . get_search_form( false ) . '</li>';
 }

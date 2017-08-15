@@ -11,6 +11,11 @@ include_once( __DIR__ . '/includes/plugin-swwrc-video.php' );
  */
 include_once( __DIR__ . '/includes/custom-search.php' );
 
+/**
+ * Include University Center Objects customizations.
+ */
+include_once( __DIR__ . '/includes/university-center-objects.php' );
+
 add_filter( 'spine_child_theme_version', 'wrc_theme_version' );
 /**
  * Provide a theme version for use in cache busting.
@@ -28,8 +33,12 @@ add_action( 'wp_enqueue_scripts', 'swwrc_child_enqueue_scripts', 11 );
  * Enqueue custom scripting in child theme.
  */
 function swwrc_child_enqueue_scripts() {
-	wp_enqueue_script( 'swwrc-videobg', get_stylesheet_directory_uri() . '/js/jQuery.videobg.js', array( 'jquery' ), wrc_theme_version(), true );
 	wp_enqueue_script( 'swwrc-custom', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), wrc_theme_version(), true );
+
+	if ( is_front_page() ) {
+		wp_enqueue_script( 'swwrc-videobg', get_stylesheet_directory_uri() . '/js/jQuery.videobg.js', array( 'jquery' ), wrc_theme_version(), true );
+		wp_enqueue_script( 'swwrc-home', get_stylesheet_directory_uri() . '/js/home.js', array( 'jquery' ), wrc_theme_version(), true );
+	}
 }
 
 add_action( 'pre_get_posts', 'projects_104b' );
@@ -44,95 +53,25 @@ function projects_104b( $query ) {
 	}
 }
 
-add_action( 'admin_init', 'swwrc_register_announcement_settings' );
+add_filter( 'wsu_content_syndicate_host_data', 'swwrc_filter_syndicate_host_data', 10, 2 );
 /**
- * Register settings for the Home Page Announcement settings admin page.
- */
-function swwrc_register_announcement_settings() {
-	register_setting(
-		'swwrc_options',
-		'announcement_settings'
-	);
-
-	add_settings_section(
-		'category_id',
-		null,
-		null,
-		'swwrc_options'
-	);
-
-	add_settings_field(
-		'announcement_category',
-		'Announcement Category',
-		'swwrc_announcement_category_dropdown',
-		'swwrc_options',
-		'category_id',
-		array(
-			'label_for' => 'category_id',
-		)
-	);
-}
-
-/**
- * Output for the Announcement Category field.
+ * Filter the thumbnail used from a remote host with WSU Content Syndicate.
  *
- * @param array $args Extra arguments used when outputting the field.
+ * @param object $subset Data associated with a single remote item.
+ * @param object $post   Original data used to build the subset.
+ *
+ * @return object Modified data.
  */
-function swwrc_announcement_category_dropdown( $args ) {
-	$options = get_option( 'announcement_settings' );
-	$category_id = ( $options && isset( $options[ $args['label_for'] ] ) ) ? $options[ $args['label_for'] ] : 0;
-	?>
-	<select name="announcement_settings[<?php echo esc_attr( $args['label_for'] ); ?>]">
-		<option value="">- Select -</option>
-		<?php
-		$categories = get_categories( array(
-			'orderby' => 'name',
-			'order' => 'ASC',
-			'hide_empty' => 0,
-		) );
-
-		foreach ( $categories as $category ) {
-			?><option value="<?php echo esc_attr( $category->cat_ID ); ?>"<?php selected( $category_id, $category->cat_ID ); ?>><?php echo esc_html( $category->cat_name ); ?></option><?php
+function swwrc_filter_syndicate_host_data( $subset, $post ) {
+	if ( isset( $post->featured_media ) && isset( $subset->featured_media ) ) {
+		if ( isset( $subset->featured_media->media_details->sizes->{'spine-medium_size'} ) ) {
+			$subset->thumbnail = $subset->featured_media->media_details->sizes->{'spine-medium_size'}->source_url;
+		} else {
+			$subset->thumbnail = $subset->featured_media->source_url;
 		}
-		?>
-	</select>
-	<p class="description">Select the category to use for displaying special announcements on the home page.</p>
-	<?php
-}
-
-add_action( 'admin_menu', 'swwrc_add_announcement_settings_page' );
-/**
- * Create an admin page for Home Page Announcements.
- */
-function swwrc_add_announcement_settings_page() {
-	add_submenu_page(
-		'options-general.php',
-		'Home Page Announcements',
-		'Home Page Announcements',
-		'manage_options',
-		'swwrc_options',
-		'swwrc_announcement_settings_page'
-	);
-}
-
-/**
- * Display the Home Page Announcements settings page.
- */
-function swwrc_announcement_settings_page() {
-	if ( ! current_user_can( 'manage_options' ) ) {
-		return;
+	} else {
+		$subset->thumbnail = false;
 	}
 
-	?>
-	<div class="wrap">
-		<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
-		<form method="post" action="options.php">
-			<?php
-				settings_fields( 'swwrc_options' );
-				do_settings_sections( 'swwrc_options' );
-				submit_button( 'Save Settings' );
-			?>
-		</form>
-	</div>
-	<?php
+	return $subset;
 }

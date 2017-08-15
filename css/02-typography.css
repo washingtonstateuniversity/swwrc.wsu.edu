@@ -1,0 +1,59 @@
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main header {
+	font-family: palatino;
+	font-weight: 500;
+}
+
+main h1 {
+	font-size: 2.5em;
+	padding-top: 2em;
+}
+
+main h2 {
+	font-size: 2em;
+	padding-bottom: 1em;
+}
+
+main h3 {
+	padding-top: 1em;
+}
+
+main aside header {
+	font-size: 1.4em;
+	padding-bottom: 1em;
+}
+
+main aside ul li {
+	padding-bottom: .8em;
+}
+
+main p,
+main ol,
+main ul {
+	font-size: 1.1em;
+	line-height: 1.6em;
+}
+
+main p ~ p,
+main ol ~ p,
+main ul ~ p {
+	padding-bottom: 1.6em;
+}
+
+main a {
+	color: #2a64ac;
+}
+
+main a:hover {
+	color: #fff;
+	background-color: #23282d;
+}
+
+main .two p,
+main .two aside {
+	word-break: break-word;
+}
