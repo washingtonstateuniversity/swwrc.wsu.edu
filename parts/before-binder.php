@@ -106,13 +106,4 @@
 	);
 	wp_nav_menu( $spine_site_args );
 	?>
-	<form class="swwrc-site-search-form"
-		  action="<?php echo esc_url( trailingslashit( get_home_url() ) ); ?>"
-		  method="get">
-		<div>
-			<label class="screen-reader-text" for="s">Search for:</label>
-			<input type="text" value="" name="s" id="s" />
-			<input type="submit" value="Search" />
-		</div>
-	</form>
 </nav>

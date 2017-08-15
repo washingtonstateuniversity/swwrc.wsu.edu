@@ -81,8 +81,9 @@
 	padding: 14px;
 }
 
-.main-menu .swwrc-site-search-form {
+.main-menu .searchform {
 	display: inline-block;
+	vertical-align: middle;
 }
 
 .mobilenav {
