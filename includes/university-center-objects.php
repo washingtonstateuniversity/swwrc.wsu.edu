@@ -52,3 +52,53 @@ function sort_syndicate_people( $people ) {
 
 	return $people;
 }
+
+/**
+ * Return the display data for a person.
+ *
+ * @since 0.5.0
+ *
+ * @param int $post_id
+ *
+ * @return array
+ */
+function get_person_data( $post_id ) {
+	$display_data = array(
+		'prefix' => '',
+		'first_name' => '',
+		'last_name' => '',
+		'name' => '',
+		'suffix' => '',
+		'title' => '',
+		'title_secondary' => '',
+		'office' => '',
+		'email' => '',
+		'phone' => '',
+	);
+
+	if ( function_exists( 'wsuwp_uc_get_meta' ) ) {
+		foreach ( $display_data as $field => $v ) {
+			$display_data[ $field ] = wsuwp_uc_get_meta( $post_id, $field );
+		}
+	}
+
+	// Create the name for display. If a first and last name are set, then look for a suffix and attach.
+	if ( ! empty( trim( $display_data['first_name'] ) ) && ! empty( trim( $display_data['last_name'] ) ) ) {
+		$display_name_array = array( $display_data['prefix'], $display_data['first_name'], $display_data['last_name'] );
+		$display_name_array = array_filter( $display_name_array, 'trim' );
+		$display_name = join( ' ', $display_name_array );
+
+		if ( ! empty( trim( $display_data['suffix'] ) ) ) {
+			$display_name .= ', ' . $display_data['suffix'];
+		}
+	}
+
+	// If no display name is available, use the title.
+	if ( empty( $display_name ) ) {
+		$display_name = get_the_title();
+	}
+
+	$display_data['name'] = $display_name;
+
+	return $display_data;
+}
