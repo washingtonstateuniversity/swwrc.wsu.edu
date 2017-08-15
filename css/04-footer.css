@@ -1,0 +1,23 @@
+.main-footer-af {
+	width: 80%;
+	text-align: center;
+	border-top: 1px solid #4d4d4d;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	padding-bottom: 1.5em;
+	padding-top: 1.5em;
+	font-size: 1.1em;
+	line-height: 1.6em;
+	color: #4d4d4d;
+	font-family: "Open Sans";
+}
+
+.main-footer-af a {
+	color: #2a64ac;
+}
+
+.main-footer-af a:hover {
+	color: #fff;
+	background-color: #23282d;
+}

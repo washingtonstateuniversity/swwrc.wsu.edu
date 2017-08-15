@@ -1,0 +1,40 @@
+html {
+	background-color: #fff !important;
+	height: 100%;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	color: #4d4d4d;
+	font-family: "Open Sans";
+}
+
+#spine,
+.main-header {
+	display: none;
+}
+
+#jacket {
+	height: 100%;
+	border-left: 8px solid #003286;
+}
+
+main {
+	margin-left: 8px;
+}
+
+main .page {
+	padding-top: 3em;
+}
+
+main .featured-image {
+	height: 300px;
+	margin-top: 0;
+}
+
+@media screen and (max-width: 791px) {
+
+	main figure.featured-image {
+		margin-top: 0 !important;
+	}
+}
