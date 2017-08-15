@@ -3,6 +3,10 @@
 	border-left: none;
 }
 
+.home main {
+	margin-top: 0;
+}
+
 .home #videobg,
 .home .videoBG,
 .home .videoBG_wrapper {
