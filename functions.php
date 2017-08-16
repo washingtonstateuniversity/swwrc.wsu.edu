@@ -1,20 +1,9 @@
 <?php
 
-/**
- * Include the functionality used to load the home page's headline
- * and video background features.
- */
 include_once( __DIR__ . '/includes/plugin-swwrc-video.php' );
-
-/**
- * Include custom search functionality.
- */
 include_once( __DIR__ . '/includes/custom-search.php' );
-
-/**
- * Include University Center Objects customizations.
- */
 include_once( __DIR__ . '/includes/university-center-objects.php' );
+include_once( __DIR__ . '/includes/content-syndicate.php' );
 
 add_filter( 'spine_child_theme_version', 'wrc_theme_version' );
 /**
