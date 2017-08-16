@@ -10,6 +10,8 @@ add_filter( 'wsuwp_uc_people_item_html', 'SWWRC\Content_Syndicate\uc_item_output
 add_filter( 'wsuwp_uc_project_item_html', 'SWWRC\Content_Syndicate\uc_item_output', 10, 3 );
 add_filter( 'wsuwp_uc_publications_item_html', 'SWWRC\Content_Syndicate\uc_item_output', 10, 3 );
 
+add_shortcode( 'swwrc_uc_syndicate_filters', 'SWWRC\Content_Syndicate\display_swwrc_uc_syndicate_filters' );
+
 /**
  * Register a syndicate_tags field in the REST API to provide specific
  * data on tags that should appear with posts pulled in content syndicate.
@@ -147,4 +149,37 @@ function uc_item_output( $html, $object, $type ) {
 	$html = ob_get_clean();
 
 	return $html;
+}
+
+/**
+ * Displays a site search form.
+ *
+ * @since 0.5.0
+ */
+function display_swwrc_uc_syndicate_filters( $atts ) {
+	$defaults = array(
+		'post_type' => '',
+	);
+
+	$atts = shortcode_atts( $defaults, $atts );
+
+	if ( empty( $atts['post_type'] ) ) {
+		return '';
+	}
+
+	if ( ! function_exists( 'wsuwp_uc_get_object_type_slugs' ) ) {
+		return '';
+	}
+
+	if ( ! in_array( $atts['post_type'], wsuwp_uc_get_object_type_slugs(), true ) ) {
+		return '';
+	}
+
+	ob_start();
+
+	swwrc_display_uco_tag_filters( $atts['post_type'] );
+
+	$content = ob_get_clean();
+
+	return $content;
 }
