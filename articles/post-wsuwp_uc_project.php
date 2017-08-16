@@ -24,12 +24,14 @@
 		</div><!-- .article-summary -->
 	<?php else : ?>
 		<div class="article-body">
-			<?php the_content(); ?>
 			<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'spine' ),
-				'after' => '</div>',
-			) );
+
+			if ( has_post_thumbnail() ) {
+				?><figure class="article-thumbnail"><?php the_post_thumbnail( 'thumbnail' ); ?></figure><?php
+			}
+
+			the_content();
+
 			?>
 		</div>
 	<?php endif; ?>
