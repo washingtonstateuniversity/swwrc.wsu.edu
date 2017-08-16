@@ -115,6 +115,7 @@ function swwrc_display_uco_tag_filters( $post_type ) {
 		) );
 
 		if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) {
+			wp_enqueue_script( 'swwrc-filter', get_stylesheet_directory_uri() . '/js/tag-filter.js', array( 'jquery' ), wrc_theme_version(), true );
 			?>
 			<ul class="swwrc-tag-filters">
 				<?php foreach ( $tags as $tag ) { ?>
