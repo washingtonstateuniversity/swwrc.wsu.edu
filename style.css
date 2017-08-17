@@ -11,24 +11,23 @@ Tags: light
 */
 
 html {
-	background-color: #fff !important;
+	background-color: #fff;
 	height: 100%;
 	text-rendering: optimizeLegibility;
 }
 
 body {
-	color: #4d4d4d;
-	font-family: "Open Sans";
+	color: #434343;
+	font-weight: 300;
 }
 
 #jacket {
-	height: 100%;
 	border-left: 8px solid #003286;
 }
 
 #binder main {
-	margin-left: 8px;
-	margin-top: 80px;
+	margin: 0 auto;
+	width: 77%;
 }
 
 main .page {
@@ -37,14 +36,14 @@ main .page {
 
 main .featured-image {
 	height: 300px;
-	left: calc(-50vw + (1188px / 2 - 4px));
-	width: calc(100vw - 8px);
+	left: calc(-50vw + (1188px * .77 / 2));
+	width: 100vw;
 }
 
 @media screen and (max-width: 1196px) {
 
 	main .featured-image {
-		left: -8px;
+		left: calc(-50vw + 50%);
 	}
 }
 
@@ -75,6 +74,10 @@ main header {
 main h1 {
 	font-size: 2.5em;
 	padding-top: 2em;
+	padding-bottom: .5em;
+	margin-bottom: 1.2em;
+	font-weight: 400;
+	border-bottom: 1px solid #d8d8d8;
 }
 
 main h2 {
@@ -113,8 +116,13 @@ main a {
 }
 
 main a:hover {
-	color: #fff;
-	background-color: #23282d;
+	color: #434343;
+	border-bottom: 1px solid #434343;
+}
+
+.archive section article h2.article-title {
+	padding-top: 2em;
+	padding-bottom: .1em !important;
 }
 
 main .two p,
@@ -123,24 +131,31 @@ main .two aside {
 }
 
 .main-menu {
-	font-family: "Open Sans";
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 	font-size: 1.2em;
 	width: 100%;
-	background-color: #fff;
-	text-align: center;
+	background-color: rgba(255, 255, 255, .8);
 	top: 0;
 	z-index: 200;
 	position: fixed;
 }
 
+.main-menu .menu-position {
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+	width: 77%;
+}
+
 .main-menu #logo {
 	display: inline-block;
 	vertical-align: middle;
-	margin: 0 2% 0 0;
+	margin-right: 2%;
 }
 
 .main-menu #logo img {
-	padding: 20px 0 10px;
+	display: block;
 }
 
 .main-menu ul {
@@ -151,31 +166,30 @@ main .two aside {
 	padding: 0 0 0 1em;
 }
 
-.main-menu ul li {
+.main-menu li {
 	padding: 0;
 	display: inline-block;
 }
 
-.main-menu ul li a {
-	font-weight: 100;
+.main-menu li a {
+	font-weight: 300;
 	margin: 0;
-	padding: 28px 15px;
+	padding: 23px 15px;
 	color: #2a64ac;
 	display: block;
 	height: 100%;
 }
 
-.main-menu ul li a:hover {
+.main-menu li a:hover {
 	margin: 0;
 	display: block;
 	height: 100%;
-	color: #fff;
-	background-color: #23282d;
+	color: #434343;
+	border-bottom: 0;
 }
 
-.main-menu ul li.current a {
-	background-color: #23282d;
-	color: #fff;
+.main-menu .active li a {
+	color: #434343;
 }
 
 .main-menu ul li ul {
@@ -222,10 +236,10 @@ main .two aside {
 	}
 }
 
-@media screen and (max-width: 1188px) {
+@media screen and (max-width: 1046px) {
 
-	.main-menu #logo {
-		margin-left: 8%;
+	.main-menu .menu-position {
+		width: 100%;
 	}
 }
 
@@ -244,7 +258,6 @@ main .two aside {
 		width: 100%;
 		background-color: #fff;
 		display: none;
-		margin-left: -8px;
 		padding: 0;
 		top: 65px;
 		position: absolute;
@@ -342,18 +355,14 @@ main .two aside {
 }
 
 .main-footer-af {
-	width: 80%;
+	width: 77%;
 	text-align: center;
-	border-top: 1px solid #4d4d4d;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 2em;
-	padding-bottom: 1.5em;
-	padding-top: 1.5em;
+	border-top: 1px solid #d8d8d8;
+	margin: 2em auto 0;
+	padding: 1.5em 0;
 	font-size: 1.1em;
 	line-height: 1.6em;
-	color: #4d4d4d;
-	font-family: "Open Sans";
+	color: #434343;
 }
 
 .main-footer-af a {
@@ -361,8 +370,8 @@ main .two aside {
 }
 
 .main-footer-af a:hover {
-	color: #fff;
-	background-color: #23282d;
+	color: #434343;
+	border-bottom: 1px solid #434343;
 }
 
 /* Home */
@@ -407,6 +416,14 @@ main .two aside {
 .home .logo-container img {
 	width: 100%;
 	padding-bottom: 3em;
+}
+
+.home .main-menu .menu-position {
+	width: 100%;
+}
+
+.home .main-menu li a {
+	padding: 29px 15px;
 }
 
 .home .wsuwp-content-syndicate-list {
@@ -489,8 +506,7 @@ main .two aside {
 	}
 
 	.home .main-menu.navreg {
-		background-color: rgba(255, 255, 255, .8);
-		margin-top: -83px;
+		margin-top: -85px;
 		position: absolute;
 		top: auto;
 	}

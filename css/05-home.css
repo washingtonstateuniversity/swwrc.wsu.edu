@@ -35,6 +35,14 @@
 	padding-bottom: 3em;
 }
 
+.home .main-menu .menu-position {
+	width: 100%;
+}
+
+.home .main-menu li a {
+	padding: 29px 15px;
+}
+
 .home .wsuwp-content-syndicate-list {
 	list-style: none;
 }
@@ -112,8 +120,7 @@
 	}
 
 	.home .main-menu.navreg {
-		background-color: rgba(255, 255, 255, .8);
-		margin-top: -83px;
+		margin-top: -85px;
 		position: absolute;
 		top: auto;
 	}

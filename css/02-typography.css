@@ -11,6 +11,10 @@ main header {
 main h1 {
 	font-size: 2.5em;
 	padding-top: 2em;
+	padding-bottom: .5em;
+	margin-bottom: 1.2em;
+	font-weight: 400;
+	border-bottom: 1px solid #d8d8d8;
 }
 
 main h2 {
@@ -49,8 +53,13 @@ main a {
 }
 
 main a:hover {
-	color: #fff;
-	background-color: #23282d;
+	color: #434343;
+	border-bottom: 1px solid #434343;
+}
+
+.archive section article h2.article-title {
+	padding-top: 2em;
+	padding-bottom: .1em !important;
 }
 
 main .two p,

@@ -1,22 +1,21 @@
 html {
-	background-color: #fff !important;
+	background-color: #fff;
 	height: 100%;
 	text-rendering: optimizeLegibility;
 }
 
 body {
-	color: #4d4d4d;
-	font-family: "Open Sans";
+	color: #434343;
+	font-weight: 300;
 }
 
 #jacket {
-	height: 100%;
 	border-left: 8px solid #003286;
 }
 
 #binder main {
-	margin-left: 8px;
-	margin-top: 80px;
+	margin: 0 auto;
+	width: 77%;
 }
 
 main .page {
@@ -25,14 +24,14 @@ main .page {
 
 main .featured-image {
 	height: 300px;
-	left: calc(-50vw + (1188px / 2 - 4px));
-	width: calc(100vw - 8px);
+	left: calc(-50vw + (1188px * .77 / 2));
+	width: 100vw;
 }
 
 @media screen and (max-width: 1196px) {
 
 	main .featured-image {
-		left: -8px;
+		left: calc(-50vw + 50%);
 	}
 }
 
