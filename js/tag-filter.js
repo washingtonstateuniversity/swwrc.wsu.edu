@@ -1,9 +1,10 @@
 ( function( $ ) {
 	$( ".swwrc-tag-filters" ).on( "change", "input:checkbox", function() {
-		var classes = [],
-			$posts = $( this ).closest( ".swwrc-tag-filters" ).next( "div" ).find( "article" );
+		var $filter_container = $( this ).closest( ".swwrc-tag-filters" ),
+			classes = [],
+			$posts = $filter_container.next( "div" ).find( "article" );
 
-		$( ".swwrc-tag-filters input:checkbox:checked" ).each( function() {
+		$filter_container.find( "input:checkbox:checked" ).each( function() {
 			classes.push( "." + $( this ).val() );
 		} );
 
