@@ -21,17 +21,12 @@ body {
 	font-family: "Open Sans";
 }
 
-#spine,
-.main-header {
-	display: none;
-}
-
 #jacket {
 	height: 100%;
 	border-left: 8px solid #003286;
 }
 
-main {
+#binder main {
 	margin-left: 8px;
 	margin-top: 80px;
 }
@@ -42,13 +37,28 @@ main .page {
 
 main .featured-image {
 	height: 300px;
-	margin-top: 0;
+	left: calc(-50vw + (1188px / 2 - 4px));
+	width: calc(100vw - 8px);
+}
+
+@media screen and (max-width: 1196px) {
+
+	main .featured-image {
+		left: -8px;
+	}
+}
+
+@media screen and (max-width: 910px) {
+
+	#binder.fluid main {
+		margin-top: 65px;
+	}
 }
 
 @media screen and (max-width: 791px) {
 
-	main figure.featured-image {
-		margin-top: 0 !important;
+	main .featured-image {
+		left: 0;
 	}
 }
 
@@ -117,6 +127,7 @@ main .two aside {
 	font-size: 1.2em;
 	width: 100%;
 	background-color: #fff;
+	text-align: center;
 	top: 0;
 	z-index: 200;
 	position: fixed;
@@ -125,7 +136,7 @@ main .two aside {
 .main-menu #logo {
 	display: inline-block;
 	vertical-align: middle;
-	margin: 0 2% 0 8%;
+	margin: 0 2% 0 0;
 }
 
 .main-menu #logo img {
@@ -211,6 +222,13 @@ main .two aside {
 	}
 }
 
+@media screen and (max-width: 1188px) {
+
+	.main-menu #logo {
+		margin-left: 8%;
+	}
+}
+
 @media screen and (max-width: 910px) {
 
 	.main-menu {
@@ -226,6 +244,7 @@ main .two aside {
 		width: 100%;
 		background-color: #fff;
 		display: none;
+		margin-left: -8px;
 		padding: 0;
 		top: 65px;
 		position: absolute;

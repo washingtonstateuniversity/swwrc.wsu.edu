@@ -3,6 +3,7 @@
 	font-size: 1.2em;
 	width: 100%;
 	background-color: #fff;
+	text-align: center;
 	top: 0;
 	z-index: 200;
 	position: fixed;
@@ -11,7 +12,7 @@
 .main-menu #logo {
 	display: inline-block;
 	vertical-align: middle;
-	margin: 0 2% 0 8%;
+	margin: 0 2% 0 0;
 }
 
 .main-menu #logo img {
@@ -97,6 +98,13 @@
 	}
 }
 
+@media screen and (max-width: 1188px) {
+
+	.main-menu #logo {
+		margin-left: 8%;
+	}
+}
+
 @media screen and (max-width: 910px) {
 
 	.main-menu {
@@ -112,6 +120,7 @@
 		width: 100%;
 		background-color: #fff;
 		display: none;
+		margin-left: -8px;
 		padding: 0;
 		top: 65px;
 		position: absolute;

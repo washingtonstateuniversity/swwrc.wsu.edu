@@ -9,17 +9,12 @@ body {
 	font-family: "Open Sans";
 }
 
-#spine,
-.main-header {
-	display: none;
-}
-
 #jacket {
 	height: 100%;
 	border-left: 8px solid #003286;
 }
 
-main {
+#binder main {
 	margin-left: 8px;
 	margin-top: 80px;
 }
@@ -30,12 +25,27 @@ main .page {
 
 main .featured-image {
 	height: 300px;
-	margin-top: 0;
+	left: calc(-50vw + (1188px / 2 - 4px));
+	width: calc(100vw - 8px);
+}
+
+@media screen and (max-width: 1196px) {
+
+	main .featured-image {
+		left: -8px;
+	}
+}
+
+@media screen and (max-width: 910px) {
+
+	#binder.fluid main {
+		margin-top: 65px;
+	}
 }
 
 @media screen and (max-width: 791px) {
 
-	main figure.featured-image {
-		margin-top: 0 !important;
+	main .featured-image {
+		left: 0;
 	}
 }
