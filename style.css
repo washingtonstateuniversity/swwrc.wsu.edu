@@ -145,13 +145,12 @@ main .two aside {
 	margin: 0 auto;
 	position: relative;
 	text-align: center;
-	width: 77%;
+	width: 100%;
 }
 
 .main-menu #logo {
 	display: inline-block;
 	vertical-align: middle;
-	margin-right: 2%;
 }
 
 .main-menu #logo img {
@@ -223,6 +222,48 @@ main .two aside {
 .main-menu .searchform {
 	display: inline-block;
 	vertical-align: middle;
+}
+
+.home .main-menu .searchform {
+	display: none;
+}
+
+.main-menu .searchform input[type=text] {
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #003286;
+	padding: 6px 4px;
+	outline: 0;
+	border-radius: 0;
+	color: #767676;
+ 	margin: 0;
+	background: transparent;
+}
+.main-menu .searchform input[type=text]:focus {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #434343;
+	color: #767676;
+	box-shadow: none;
+}
+
+.main-menu .searchform input[type=submit] {
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	background: #003286;
+	border: 0;
+	border-radius: 0;
+	color: #fff;
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	margin-bottom: 0;
+	line-height: normal;
+	padding: .8em .8em;
+	vertical-align: middle;
+	text-transform: uppercase;
 }
 
 .mobilenav {
