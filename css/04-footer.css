@@ -9,6 +9,13 @@
 	color: #434343;
 }
 
+.main-footer-af address {
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: .8rem;
+	line-height: 1.5;
+	color: #4d4d4d;
+}
+
 .main-footer-af a {
 	color: #2a64ac;
 }

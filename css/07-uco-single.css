@@ -1,0 +1,33 @@
+.single-wsuwp_uc_project .article-body .row:not(.unscale) .column figure,
+.single-wsuwp_uc_project .article-body figure.article-thumbnail,
+.single-wsuwp_uc_person .row:not(.unscale) .column figure,
+.single-wsuwp_uc_person figure.article-thumbnail {
+	float: none;
+	flex: 1;
+	width: 250px;
+	margin-right: 1em;
+}
+
+.single-wsuwp_uc_person article,
+.single-wsuwp_uc_publication .article-body,
+.single-wsuwp_uc_project .article-body {
+	display: flex;
+}
+
+.single-wsuwp_uc_person .article-body,
+.single-wsuwp_uc_entity .article-body,
+.single-wsuwp_uc_project .article-body,
+.single-wsuwp_uc_publication .article-body {
+	flex: 4;
+	clear: none;
+}
+
+@media screen and (min-width: 693px) {
+
+	.single-wsuwp_uc_person .article-header,
+	.single-wsuwp_uc_entity .article-header,
+	.single-wsuwp_uc_project .article-header,
+	.single-wsuwp_uc_publication .article-header {
+		padding-top: 3em;
+	}
+}
