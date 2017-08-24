@@ -10,7 +10,7 @@
 </header>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( ! is_singular() ) : ?>
-		<a href="<?php the_permalink(); ?>" rel="bookmark"><h2 class="article-title"><?php the_title(); ?></h2></a>
+			<a href="<?php the_permalink(); ?>" rel="bookmark"><h2 class="article-title"><?php the_title(); ?></h2></a>
 		<div class="article-summary">
 			<?php
 
