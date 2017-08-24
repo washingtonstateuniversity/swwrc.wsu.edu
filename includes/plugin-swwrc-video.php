@@ -25,8 +25,8 @@ class WSU_SWWRC_Video {
 
 		$show_on_front = get_option( 'page_on_front', false );
 
-if ( get_the_ID() === (int) $show_on_front ) {
-				add_meta_box( 'wsu_swwrc_video', 'Home Page Videos', array( $this, 'display_videos_metabox' ), null, 'normal', 'default' );
+		if ( get_the_ID() === (int) $show_on_front ) {
+			add_meta_box( 'wsu_swwrc_video', 'Home Page Videos', array( $this, 'display_videos_metabox' ), null, 'normal', 'default' );
 		}
 	}
 
