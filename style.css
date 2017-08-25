@@ -40,6 +40,10 @@ main .featured-image {
 	width: 100vw;
 }
 
+article footer {
+	margin-bottom: 1em;
+}
+
 @media screen and (max-width: 1196px) {
 
 	main .featured-image {
