@@ -35,6 +35,18 @@
 	padding-bottom: 3em;
 }
 
+.home .main-menu .menu-position {
+	width: 100%;
+}
+
+.home .main-menu li a {
+	padding: 29px 15px;
+}
+
+.home .main-menu .searchform {
+	display: none;
+}
+
 .home .wsuwp-content-syndicate-list {
 	list-style: none;
 }
@@ -51,8 +63,19 @@
 }
 
 .home .wsuwp-content-syndicate-item img {
-	display: block;
+	display: inline-block;
 	width: 100%;
+}
+
+.home .content-single .wsuwp-content-syndicate-item .content-item-thumbnail {
+	max-height: 280px;
+}
+
+.home .wsuwp-content-syndicate-item .content-item-thumbnail {
+	max-height: 150px;
+	display: block;
+	overflow: hidden;
+	margin-bottom: .8em;
 }
 
 .home .content-item-byline,
@@ -61,8 +84,11 @@
 }
 
 .home .wsuwp-content-syndicate-wrapper:first-of-type .wsuwp-content-syndicate-item:first-child .content-item-title {
-	font-size: 2em;
-	line-height: normal;
+	display: block;
+	font-size: 1.5em;
+	line-height: 1.2;
+	padding-bottom: .8em;
+	font-family: palatino;
 }
 
 .home .wsuwp-content-syndicate-wrapper:first-of-type .wsuwp-content-syndicate-item:first-child .content-item-excerpt {
@@ -74,13 +100,21 @@
 	.home .wsuwp-content-syndicate-list {
 		display: flex;
 		flex-wrap: wrap;
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.home .wsuwp-content-syndicate-item {
 		box-sizing: border-box;
 		overflow: hidden;
-		padding: 0 .75rem 1.5rem;
-		width: calc(100% / 3);
+		width: calc(90% / 3);
+		padding-left: 0;
+		padding-right: 0;
+		margin: 1%;
+	}
+
+	.home .content-single .wsuwp-content-syndicate-item {
+		margin-bottom: 0;
 	}
 
 	.home .wsuwp-content-syndicate-wrapper:first-of-type .wsuwp-content-syndicate-item:first-child {
@@ -88,17 +122,17 @@
 	}
 
 	.home .wsuwp-content-syndicate-wrapper:first-of-type .wsuwp-content-syndicate-item:first-child .content-item-thumbnail {
-		width: calc(100% / 3 * 2 + 1rem);
-		float: right;
+		width: calc(80% / 3 * 2 + 1rem);
+		float: left;
 		box-sizing: border-box;
-		padding-left: 1.5rem;
+		margin-right: 1em;
 	}
 }
 
 @media screen and (min-width: 910px) {
 
 	.home .main-menu {
-		font-size: 1.4em;
+		font-size: 1rem;
 		text-align: center;
 		transition: background-color .4s;
 	}
@@ -112,8 +146,7 @@
 	}
 
 	.home .main-menu.navreg {
-		background-color: rgba(255, 255, 255, .8);
-		margin-top: -83px;
+		margin-top: -80px;
 		position: absolute;
 		top: auto;
 	}

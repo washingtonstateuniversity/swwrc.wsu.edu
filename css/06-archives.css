@@ -2,15 +2,57 @@
 	margin-top: 7em;
 }
 
+.archive.post-type-archive-wsuwp_uc_person article {
+	height: 130px;
+	clear: none;
+	padding: .7em;
+	margin: .8em;
+	border-bottom: 1px rgba(127, 127, 127, .2) solid;
+}
+
+.archive.post-type-archive-wsuwp_uc_entity article {
+	clear: none;
+	padding: .7em;
+	margin: .8em;
+	border-bottom: 1px rgba(127, 127, 127, .2) solid;
+}
+
+.archive.post-type-archive-wsuwp_uc_entity article:last-of-type,
+.archive.post-type-archive-wsuwp_uc_project article:last-of-type,
+.archive.post-type-archive-wsuwp_uc_person article:last-of-type {
+	border-bottom: 0;
+}
+
+.archive.post-type-archive-wsuwp_uc_project article {
+	clear: none;
+	padding: .7em;
+	margin: .8em;
+	border-bottom: 1px rgba(127, 127, 127, .2) solid;
+}
+
 .archive section article h2.article-title {
 	padding-top: 2em;
-	padding-bottom: .1em !important;
+	padding-bottom: .1em;
+}
+
+.archive.post-type-archive-wsuwp_uc_entity article h2.article-title,
+.archive.post-type-archive-wsuwp_uc_person section article h2.article-title {
+	padding-top: 0;
+}
+
+.archive.post-type-archive-wsuwp_uc_entity article h2.article-title {
+	padding-bottom: 0;
 }
 
 .archive section article .source {
 	color: #4d4d4d;
-	font-family: "Open Sans";
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 	padding-bottom: 2em;
+}
+
+.person-title,
+.person-title-secondary {
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 }
 
 .archive section article .source .article-author {
@@ -23,4 +65,13 @@
 
 .archive footer.main-footer.archive-footer {
 	display: none;
+}
+
+.post-type-archive-wsuwp_uc_person .row:not(.unscale) .column figure,
+.post-type-archive-wsuwp_uc_person figure.article-thumbnail {
+	height: 120px;
+	width: 120px;
+	overflow: hidden;
+	display: block;
+	margin-right: .8em;
 }

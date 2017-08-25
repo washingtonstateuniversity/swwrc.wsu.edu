@@ -12,19 +12,21 @@
 		} );
 	} );
 
+	var $menu = $( ".home .main-menu" );
+
 	function checkposi( e ) {
 		if ( typeof e.touches === "undefined" && typeof e.changedTouches === "undefined" ) {
 			return;
 		}
 
-		var distance = $( ".videobg" ).height() + $( ".home nav" ).height();
-		var touch = e.touches[ 0 ] || e.changedTouches[ 0 ];
-		var y = touch.pageY - touch.clientY;
+		var distance = ( $( "body" ).hasClass( "admin-bar" ) ) ? $menu.offset().top - 30 : $menu.offset().top,
+			touch = e.touches[ 0 ] || e.changedTouches[ 0 ],
+			y = touch.pageY - touch.clientY;
 
 		if ( y > distance ) {
-			$( ".home nav" ).removeClass( "navreg" ).addClass( "navfix" );
+			$( ".home nav" ).removeClass( "navreg" );
 		} else {
-			$( ".home nav" ).removeClass( "navfix" ).addClass( "navreg" );
+			$( ".home nav" ).addClass( "navreg" );
 		}
 	}
 
@@ -42,8 +44,7 @@
 			checkposi( e, $( "html" ) );
 		} );
 	} else {
-		var $menu = $( ".home .main-menu" ),
-			menu_top = $menu.offset().top;
+		var menu_top = ( $( "body" ).hasClass( "admin-bar" ) ) ? $menu.offset().top - 30 : $menu.offset().top;
 
 		$( window ).scroll( function() {
 			if ( $( window ).scrollTop() > menu_top ) {

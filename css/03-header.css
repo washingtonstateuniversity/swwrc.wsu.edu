@@ -1,22 +1,28 @@
 .main-menu {
-	font-family: "Open Sans";
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 	font-size: 1.2em;
 	width: 100%;
-	background-color: #fff;
-	text-align: center;
+	background-color: rgba(255, 255, 255, .8);
 	top: 0;
 	z-index: 200;
 	position: fixed;
 }
 
+.main-menu .menu-position {
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
 .main-menu #logo {
 	display: inline-block;
 	vertical-align: middle;
-	margin: 0 2% 0 0;
 }
 
 .main-menu #logo img {
-	padding: 20px 0 10px;
+	display: block;
 }
 
 .main-menu ul {
@@ -27,31 +33,30 @@
 	padding: 0 0 0 1em;
 }
 
-.main-menu ul li {
+.main-menu li {
 	padding: 0;
 	display: inline-block;
 }
 
-.main-menu ul li a {
-	font-weight: 100;
+.main-menu li a {
+	font-weight: 300;
 	margin: 0;
-	padding: 28px 15px;
+	padding: 23px 15px;
 	color: #2a64ac;
 	display: block;
 	height: 100%;
 }
 
-.main-menu ul li a:hover {
+.main-menu li a:hover {
 	margin: 0;
 	display: block;
 	height: 100%;
-	color: #fff;
-	background-color: #23282d;
+	color: #434343;
+	border-bottom: 0;
 }
 
-.main-menu ul li.current a {
-	background-color: #23282d;
-	color: #fff;
+.main-menu .active li a {
+	color: #434343;
 }
 
 .main-menu ul li ul {
@@ -87,6 +92,42 @@
 	vertical-align: middle;
 }
 
+.main-menu .searchform input[type="text"] {
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #003286;
+	padding: 6px 4px;
+	outline: 0;
+	border-radius: 0;
+	color: #767676;
+	margin: 0;
+	background: transparent;
+}
+
+.main-menu .searchform input[type="text"]:focus {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #434343;
+	color: #767676;
+	box-shadow: none;
+}
+
+.main-menu .searchform input[type="submit"] {
+	background: url(./assets/ico-search-thin.svg);
+	border: none;
+	text-indent: 99999px;
+	padding: 0;
+	height: 21px;
+	width: 21px;
+	right: 0;
+	top: .6em;
+	background-size: 20px;
+	background-repeat: no-repeat;
+}
+
 .mobilenav {
 	display: none;
 }
@@ -98,10 +139,10 @@
 	}
 }
 
-@media screen and (max-width: 1188px) {
+@media screen and (max-width: 1046px) {
 
-	.main-menu #logo {
-		margin-left: 8%;
+	.main-menu .menu-position {
+		width: 100%;
 	}
 }
 
@@ -120,7 +161,6 @@
 		width: 100%;
 		background-color: #fff;
 		display: none;
-		margin-left: -8px;
 		padding: 0;
 		top: 65px;
 		position: absolute;

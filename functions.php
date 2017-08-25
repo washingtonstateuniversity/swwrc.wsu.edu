@@ -3,7 +3,7 @@
 include_once( __DIR__ . '/includes/plugin-swwrc-video.php' );
 include_once( __DIR__ . '/includes/custom-search.php' );
 include_once( __DIR__ . '/includes/university-center-objects.php' );
-include_once( __DIR__ . '/includes/content-syndicate.php' );
+//include_once( __DIR__ . '/includes/content-syndicate.php' );
 
 add_filter( 'spine_child_theme_version', 'wrc_theme_version' );
 /**

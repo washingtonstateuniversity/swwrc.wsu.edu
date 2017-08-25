@@ -59,24 +59,26 @@
 	<img class="menuicon" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/menu.png' ); ?>" width="60" height="17" alt="menu" />
 </a>
 <nav class="main-menu navreg">
-	<div id="logo">
-		<a href="<?php echo esc_url( home_url() ); ?>">
-			<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/swwrc-acr.png' ); ?>" width="90" height="42" alt="State of Washington Water Research Center" class="home-logo" />
-		</a>
+	<div class="menu-position">
+		<div id="logo">
+			<a href="<?php echo esc_url( home_url() ); ?>">
+				<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/swwrc-acr.png' ); ?>" width="90" height="42" alt="State of Washington Water Research Center" class="home-logo" />
+			</a>
+		</div>
+		<?php
+		$spine_site_args = array(
+			'theme_location'  => 'site',
+			'menu'            => 'site',
+			'container'       => false,
+			'container_class' => false,
+			'container_id'    => false,
+			'menu_class'      => null,
+			'menu_id'         => null,
+			'items_wrap'      => '<ul>%3$s</ul>',
+			'depth'           => 3,
+			'item_spacing'    => 'discard',
+		);
+		wp_nav_menu( $spine_site_args );
+		?>
 	</div>
-	<?php
-	$spine_site_args = array(
-		'theme_location'  => 'site',
-		'menu'            => 'site',
-		'container'       => false,
-		'container_class' => false,
-		'container_id'    => false,
-		'menu_class'      => null,
-		'menu_id'         => null,
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 3,
-		'item_spacing'    => 'discard',
-	);
-	wp_nav_menu( $spine_site_args );
-	?>
 </nav>
