@@ -3,7 +3,7 @@
 include_once( __DIR__ . '/includes/plugin-swwrc-video.php' );
 include_once( __DIR__ . '/includes/custom-search.php' );
 include_once( __DIR__ . '/includes/university-center-objects.php' );
-//include_once( __DIR__ . '/includes/content-syndicate.php' );
+include_once( __DIR__ . '/includes/content-syndicate.php' );
 
 add_filter( 'spine_child_theme_version', 'wrc_theme_version' );
 /**
@@ -45,29 +45,6 @@ function projects_104b( $query ) {
 	}
 }
 
-add_filter( 'wsu_content_syndicate_host_data', 'swwrc_filter_syndicate_host_data', 10, 2 );
-/**
- * Filter the thumbnail used from a remote host with WSU Content Syndicate.
- *
- * @param object $subset Data associated with a single remote item.
- * @param object $post   Original data used to build the subset.
- *
- * @return object Modified data.
- */
-function swwrc_filter_syndicate_host_data( $subset, $post ) {
-	if ( isset( $post->featured_media ) && isset( $subset->featured_media ) ) {
-		if ( isset( $subset->featured_media->media_details->sizes->{'spine-medium_size'} ) ) {
-			$subset->thumbnail = $subset->featured_media->media_details->sizes->{'spine-medium_size'}->source_url;
-		} else {
-			$subset->thumbnail = $subset->featured_media->source_url;
-		}
-	} else {
-		$subset->thumbnail = false;
-	}
-
-	return $subset;
-}
-
 add_filter( 'terms_clauses', 'swwrc_post_type_terms_clauses', 10, 3 );
 /**
  * Extend `get_terms` with a `post_type` parameter.
@@ -100,38 +77,4 @@ function swwrc_post_type_terms_clauses( $clauses, $taxonomy, $args ) {
 	}
 
 	return $clauses;
-}
-
-/**
- * Returns markup for filtering a list of posts by tag.
- *
- * @since 0.5.0
- *
- * @param string|array $post_type The post type(s) to retrieve associated tags for.
- *
- * @return string
- */
-function swwrc_display_uco_tag_filters( $post_type ) {
-	if ( in_array( $post_type, wsuwp_uc_get_object_type_slugs(), true ) ) {
-		$tags = get_terms( 'post_tag', array(
-			'post_type' => $post_type,
-		) );
-
-		if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) {
-			wp_enqueue_script( 'swwrc-filter', get_stylesheet_directory_uri() . '/js/tag-filter.js', array( 'jquery' ), wrc_theme_version(), true );
-			?>
-			<ul class="swwrc-tag-filters">
-				<?php foreach ( $tags as $tag ) { ?>
-				<li>
-					<label>
-						<input type="checkbox"
-							   value="tag-<?php echo esc_attr( $tag->slug ); ?>"
-							   checked> <?php echo esc_html( $tag->name ); ?>
-					</label>
-				</li>
-				<?php } ?>
-			</ul>
-			<?php
-		}
-	}
 }

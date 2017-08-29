@@ -102,3 +102,37 @@ function get_person_data( $post_id ) {
 
 	return $display_data;
 }
+
+/**
+ * Returns markup for filtering a list of posts by tag.
+ *
+ * @since 0.5.0
+ *
+ * @param string|array $post_type The post type(s) to retrieve associated tags for.
+ *
+ * @return string
+ */
+function display_tag_filters( $post_type ) {
+	if ( in_array( $post_type, wsuwp_uc_get_object_type_slugs(), true ) ) {
+		$tags = get_terms( 'post_tag', array(
+			'post_type' => $post_type,
+		) );
+
+		if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) {
+			wp_enqueue_script( 'swwrc-filter', get_stylesheet_directory_uri() . '/js/tag-filter.js', array( 'jquery' ), wrc_theme_version(), true );
+			?>
+			<ul class="swwrc-tag-filters">
+				<?php foreach ( $tags as $tag ) { ?>
+				<li>
+					<label>
+						<input type="checkbox"
+							   value="tag-<?php echo esc_attr( $tag->slug ); ?>"
+							   checked> <?php echo esc_html( $tag->name ); ?>
+					</label>
+				</li>
+				<?php } ?>
+			</ul>
+			<?php
+		}
+	}
+}
