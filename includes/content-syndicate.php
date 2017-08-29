@@ -61,10 +61,10 @@ function get_api_syndicate_tag_slugs( $object, $field_name ) {
  *
  * @since 0.5.0
  *
- * @param $subset
- * @param $post
+ * @param object $subset Data associated with a single remote item.
+ * @param object $post   Original data used to build the subset.
  *
- * @return mixed
+ * @return object Modified data.
  */
 function subset_data_include_tags( $subset, $post ) {
 	if ( isset( $post->syndicate_tags ) ) {
