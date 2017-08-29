@@ -9,12 +9,12 @@ add_filter( 'spine_child_theme_version', 'wrc_theme_version' );
 /**
  * Provide a theme version for use in cache busting.
  *
- * @since 0.4.15
+ * @since 0.5.0
  *
  * @return string
  */
 function wrc_theme_version() {
-	return '0.4.15';
+	return '0.5.0';
 }
 
 add_action( 'wp_enqueue_scripts', 'swwrc_child_enqueue_scripts', 21 );
