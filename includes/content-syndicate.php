@@ -3,7 +3,8 @@
 namespace SWWRC\Content_Syndicate;
 
 add_action( 'rest_api_init', 'SWWRC\Content_Syndicate\register_api_fields' );
-add_filter( 'wsu_content_syndicate_host_data', 'SWWRC\Content_Syndicate\manage_subset_data', 10, 2 );
+add_filter( 'wsu_content_syndicate_host_data', 'SWWRC\Content_Syndicate\subset_data_include_tags', 10, 2 );
+add_filter( 'wsu_content_syndicate_host_data', 'SWWRC\Content_Syndicate\subset_data_image_size', 10, 2 );
 
 add_filter( 'wsuwp_uc_organizations_item_html', 'SWWRC\Content_Syndicate\uc_item_output', 10, 3 );
 add_filter( 'wsuwp_uc_people_item_html', 'SWWRC\Content_Syndicate\uc_item_output', 10, 3 );
@@ -60,16 +61,40 @@ function get_api_syndicate_tag_slugs( $object, $field_name ) {
  *
  * @since 0.5.0
  *
- * @param $subset
- * @param $post
+ * @param object $subset Data associated with a single remote item.
+ * @param object $post   Original data used to build the subset.
  *
- * @return mixed
+ * @return object Modified data.
  */
-function manage_subset_data( $subset, $post ) {
+function subset_data_include_tags( $subset, $post ) {
 	if ( isset( $post->syndicate_tags ) ) {
 		$subset->tags = $post->syndicate_tags;
 	} else {
 		$subset->tags = array();
+	}
+
+	return $subset;
+}
+
+/**
+ * Filter the thumbnail used from a remote host with WSU Content Syndicate.
+ *
+ * @since 0.5.0
+ *
+ * @param object $subset Data associated with a single remote item.
+ * @param object $post   Original data used to build the subset.
+ *
+ * @return object Modified data.
+ */
+function subset_data_image_size( $subset, $post ) {
+	if ( isset( $post->featured_media ) && isset( $subset->featured_media ) ) {
+		if ( isset( $subset->featured_media->media_details->sizes->{'spine-medium_size'} ) ) {
+			$subset->thumbnail = $subset->featured_media->media_details->sizes->{'spine-medium_size'}->source_url;
+		} else {
+			$subset->thumbnail = $subset->featured_media->source_url;
+		}
+	} else {
+		$subset->thumbnail = false;
 	}
 
 	return $subset;
@@ -177,7 +202,7 @@ function display_swwrc_uc_syndicate_filters( $atts ) {
 
 	ob_start();
 
-	swwrc_display_uco_tag_filters( $atts['post_type'] );
+	\SWWRC\University_Center_Objects\display_tag_filters( $atts['post_type'] );
 
 	$content = ob_get_clean();
 

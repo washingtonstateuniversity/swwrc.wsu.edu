@@ -1,14 +1,12 @@
 <section class="row side-right gutter pad-ends">
-<?php
-	$post_type = ( get_queried_object() ) ? get_queried_object() : false;
 
-?>
+	<?php $post_type = ( get_queried_object() ) ? get_queried_object() : false; ?>
+
 	<h1><?php echo esc_html( $post_type->label ); ?></h1>
+
 	<div class="column one">
 
-		<?php
-		swwrc_display_uco_tag_filters( $post_type->name ); // @codingStandardsIgnoreLine
-		?>
+		<?php SWWRC\University_Center_Objects\display_tag_filters( $post_type->name ); // @codingStandardsIgnoreLine ?>
 
 		<div>
 
