@@ -28,6 +28,10 @@ main .featured-image {
 	width: 100vw;
 }
 
+.single main > section {
+	margin-top: 5em;
+}
+
 article footer {
 	margin-bottom: 1em;
 }
