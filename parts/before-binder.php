@@ -56,7 +56,7 @@
 			<path d="M251.8 35.4h-2l-1.6-4.3h-2.7v4.3h-1.9V24.9h4.6c1.3 0 2.2 0.3 2.8 0.9 0.6 0.6 0.9 1.3 0.9 2.2 0 1.4-0.6 2.3-1.9 2.8L251.8 35.4zM245.5 29.6h2.4c0.7 0 1.2-0.1 1.5-0.4 0.3-0.3 0.5-0.7 0.5-1.2 0-0.5-0.2-0.8-0.5-1.1 -0.3-0.3-0.8-0.4-1.4-0.4h-2.5V29.6z"/>
 		</g>
 	</svg>
-	<img class="menuicon" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/menu.png' ); ?>" width="60" height="17" alt="menu" />
+	<img class="menuicon" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/menu.svg' ); ?>" width="60" height="17" alt="menu" />
 </a>
 <nav class="main-menu navreg">
 	<div class="menu-position">
