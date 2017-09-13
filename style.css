@@ -30,6 +30,10 @@ body {
 	width: 77%;
 }
 
+.home #binder main {
+	width: 90%;
+}
+
 main .page {
 	padding-top: 3em;
 }
@@ -41,7 +45,7 @@ main .featured-image {
 }
 
 .single main > section {
-	margin-top: 5em;
+	margin-top: 7em;
 }
 
 article footer {
@@ -134,6 +138,10 @@ main .two aside {
 	word-break: break-word;
 }
 
+h1.article-title {
+	padding-top: 0;
+}
+
 .main-menu {
 	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 	font-size: 1.2em;
@@ -175,7 +183,7 @@ main .two aside {
 }
 
 .main-menu li a {
-	font-weight: 300;
+	font-weight: 400;
 	margin: 0;
 	padding: 23px 15px;
 	color: #2a64ac;
@@ -230,6 +238,7 @@ main .two aside {
 
 .main-menu .searchform input[type="text"] {
 	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 12px;
 	border-top: 0;
 	border-left: 0;
 	border-right: 0;
@@ -237,7 +246,9 @@ main .two aside {
 	padding: 6px 4px;
 	outline: 0;
 	border-radius: 0;
-	color: #767676;
+	color: #000;
+	font-weight: 400;
+	letter-spacing: .1px;
 	margin: 0;
 	background: transparent;
 }
@@ -256,11 +267,11 @@ main .two aside {
 	border: none;
 	text-indent: 99999px;
 	padding: 0;
-	height: 21px;
-	width: 21px;
+	height: 20px;
+	width: 20px;
 	right: 0;
-	top: .6em;
-	background-size: 20px;
+	margin-top: .6em;
+	background-size: 19px;
 	background-repeat: no-repeat;
 }
 
@@ -466,6 +477,7 @@ main .two aside {
 	width: 380px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 80px;
 }
 
 .home .logo-container img {
@@ -481,8 +493,8 @@ main .two aside {
 	padding: 29px 15px;
 }
 
-.home .main-menu .searchform {
-	display: none;
+.home h1 {
+	padding-top: 0;
 }
 
 .home .wsuwp-content-syndicate-list {
@@ -586,12 +598,6 @@ main .two aside {
 		padding: 0;
 	}
 
-	.home .main-menu.navreg {
-		margin-top: -80px;
-		position: absolute;
-		top: auto;
-	}
-
 	.home .main-menu.navreg a:hover {
 		background-color: transparent;
 		color: #434343;
@@ -683,7 +689,6 @@ main .two aside {
 }
 
 .archive section article h2.article-title {
-	padding-top: 2em;
 	padding-bottom: .1em;
 }
 
