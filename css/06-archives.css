@@ -1,3 +1,30 @@
+.archive .article-thumbnail,
+.search .article-thumbnail {
+	float: left;
+	margin-right: 1em;
+}
+
+.archive h2.article-title,
+.search h2.article-title {
+	padding-bottom: 0;
+}
+
+.archive .article-header hgroup.source,
+.search .article-header hgroup.source {
+	padding-bottom: 2em;
+}
+
+.search article.wsuwp_uc_person {
+	min-height: 160px;
+	border-bottom: 1px solid rgba(127, 127, 127, .2);
+	padding: 1em 0;
+}
+
+.search article.wsuwp_uc_person:last-of-type {
+	border-bottom: 0;
+}
+
+.search section,
 .archive section {
 	margin-top: 7em;
 }
@@ -31,7 +58,6 @@
 }
 
 .archive section article h2.article-title {
-	padding-top: 2em;
 	padding-bottom: .1em;
 }
 

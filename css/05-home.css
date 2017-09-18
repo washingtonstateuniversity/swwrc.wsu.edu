@@ -26,8 +26,7 @@
 
 .home .logo-container {
 	width: 380px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 80px auto 0;
 }
 
 .home .logo-container img {
@@ -43,8 +42,8 @@
 	padding: 29px 15px;
 }
 
-.home .main-menu .searchform {
-	display: none;
+.home h1 {
+	padding-top: 0;
 }
 
 .home .wsuwp-content-syndicate-list {
@@ -143,12 +142,6 @@
 
 	.home .main-menu ul {
 		padding: 0;
-	}
-
-	.home .main-menu.navreg {
-		margin-top: -80px;
-		position: absolute;
-		top: auto;
 	}
 
 	.home .main-menu.navreg a:hover {
