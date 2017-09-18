@@ -62,3 +62,7 @@ main .two p,
 main .two aside {
 	word-break: break-word;
 }
+
+h1.article-title {
+	padding-top: 0;
+}

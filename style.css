@@ -284,7 +284,6 @@ h1.article-title {
 	.admin-bar .main-menu {
 		top: 32px;
 	}
-
 }
 
 @media screen and (max-width: 1046px) {
@@ -475,9 +474,7 @@ h1.article-title {
 
 .home .logo-container {
 	width: 380px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 80px;
+	margin: 80px auto 0;
 }
 
 .home .logo-container img {
@@ -643,7 +640,6 @@ h1.article-title {
 .search .article-header hgroup.source {
 	padding-bottom: 2em;
 }
-
 
 .search article.wsuwp_uc_person {
 	min-height: 160px;

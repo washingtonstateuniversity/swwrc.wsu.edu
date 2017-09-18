@@ -18,6 +18,10 @@ body {
 	width: 77%;
 }
 
+.home #binder main {
+	width: 90%;
+}
+
 main .page {
 	padding-top: 3em;
 }
@@ -29,11 +33,11 @@ main .featured-image {
 }
 
 .single main > section {
-	margin-top: 5em;
+	margin-top: 7em;
 }
 
 article footer {
-	margin-bottom: 1em;
+	margin-bottom: 3em;
 }
 
 @media screen and (max-width: 1196px) {
