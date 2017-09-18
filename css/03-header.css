@@ -237,8 +237,13 @@
 	}
 
 	.mobilenav .menuicon {
+		color: #253b80;
 		display: inline-block;
-		top: 30px;
+		font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+		font-size: 15px;
+		font-weight: 600;
+		text-transform: uppercase;
+		top: 25px;
 		right: 20px;
 		position: absolute;
 	}
