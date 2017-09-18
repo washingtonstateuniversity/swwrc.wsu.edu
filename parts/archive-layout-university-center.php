@@ -6,7 +6,7 @@
 
 	<div class="column one">
 
-		<?php SWWRC\University_Center_Objects\display_tag_filters( $post_type->name ); // @codingStandardsIgnoreLine ?>
+		<?php SWWRC\University_Center_Objects\display_tag_filters( $post_type->name ); ?>
 
 		<div>
 
