@@ -4,6 +4,7 @@ include_once( __DIR__ . '/includes/plugin-swwrc-video.php' );
 include_once( __DIR__ . '/includes/custom-search.php' );
 include_once( __DIR__ . '/includes/university-center-objects.php' );
 include_once( __DIR__ . '/includes/content-syndicate.php' );
+include_once( __DIR__ . '/includes/class-swwrc-uc-taxonomy-terms-widget.php' );
 
 add_filter( 'spine_child_theme_version', 'wrc_theme_version' );
 /**
@@ -42,7 +43,7 @@ add_filter( 'terms_clauses', 'swwrc_post_type_terms_clauses', 10, 3 );
  * @param string $clauses
  * @param string $taxonomy
  * @param array  $args
-  *
+ *
  * @return string
  */
 function swwrc_post_type_terms_clauses( $clauses, $taxonomy, $args ) {

@@ -175,3 +175,12 @@ function register_sidebars() {
 		) );
 	}
 }
+
+/**
+ * Registers the custom widget used by the theme.
+ *
+ * @since 0.5.0
+ */
+add_action( 'widgets_init', function() {
+	register_widget( 'SWWRC_UC_Taxonomy_Terms_Widget' );
+} );
