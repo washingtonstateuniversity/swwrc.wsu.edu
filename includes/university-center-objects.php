@@ -5,6 +5,7 @@ namespace SWWRC\University_Center_Objects;
 add_filter( 'wsuwp_uc_people_to_add_to_content', 'SWWRC\University_Center_Objects\sort_object_people' );
 add_filter( 'wsuwp_uc_people_sort_items', 'SWWRC\University_Center_Objects\sort_syndicate_people' );
 add_action( 'init', 'SWWRC\University_Center_Objects\rewrite_rules', 11 );
+add_action( 'init', 'SWWRC\University_Center_Objects\register_sidebars', 11 );
 
 /**
  * Sort a University Center object's associated people alphabetically by last name.
@@ -155,5 +156,22 @@ function rewrite_rules() {
 			'index.php?post_type=' . $uc_object . '&category_name=$matches[1]',
 			'top'
 		);
+	}
+}
+
+/**
+ * Registers a sidebar for each UC post type.
+ *
+ * @since 0.5.0
+ */
+function register_sidebars() {
+	foreach ( wsuwp_uc_get_object_type_slugs() as $uc_object ) {
+		$object = get_post_type_object( $uc_object );
+
+		register_sidebar( array(
+			'name' => $object->label . ' Sidebar',
+			'id' => 'sidebar_' . $uc_object,
+			'description' => 'Widgets in this area will be shown on all ' . $object->label . ' archive views.',
+		) );
 	}
 }
