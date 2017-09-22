@@ -18,7 +18,13 @@
 
 	<div class="column two">
 
-		<?php get_sidebar(); ?>
+		<?php
+		$post_type = $wp_query->query['post_type'];
+
+		if ( is_active_sidebar( "sidebar_{$post_type}" ) ) {
+			dynamic_sidebar( "sidebar_{$post_type}" );
+		}
+		?>
 
 	</div><!--/column two-->
 
