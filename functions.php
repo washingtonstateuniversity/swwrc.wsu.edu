@@ -33,18 +33,6 @@ function swwrc_child_enqueue_scripts() {
 	}
 }
 
-add_action( 'pre_get_posts', 'projects_104b' );
-/**
- * Query the `wsuwp_uc_project` post type for the 104b category archive.
- */
-function projects_104b( $query ) {
-	if ( is_category( '104b' ) && $query->is_main_query() ) {
-		$query->set( 'post_type', array(
-			'wsuwp_uc_project',
-		) );
-	}
-}
-
 add_filter( 'terms_clauses', 'swwrc_post_type_terms_clauses', 10, 3 );
 /**
  * Extend `get_terms` with a `post_type` parameter.
