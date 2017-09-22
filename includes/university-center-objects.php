@@ -4,6 +4,7 @@ namespace SWWRC\University_Center_Objects;
 
 add_filter( 'wsuwp_uc_people_to_add_to_content', 'SWWRC\University_Center_Objects\sort_object_people' );
 add_filter( 'wsuwp_uc_people_sort_items', 'SWWRC\University_Center_Objects\sort_syndicate_people' );
+add_action( 'init', 'SWWRC\University_Center_Objects\rewrite_rules', 11 );
 
 /**
  * Sort a University Center object's associated people alphabetically by last name.
@@ -134,5 +135,25 @@ function display_tag_filters( $post_type ) {
 			</ul>
 			<?php
 		}
+	}
+}
+
+/**
+ * Adds rewrite rules for University Center post type category term archive page views.
+ *
+ * @since 0.4.16
+ */
+function rewrite_rules() {
+	$names = get_option( 'wsuwp_uc_names', false );
+
+	foreach ( wsuwp_uc_get_object_type_slugs() as $uc_object ) {
+		$name = ( 'wsuwp_uc_person' === $uc_object ) ? 'people' : substr( $uc_object, strlen( 'wsuwp_uc_' ) );
+		$slug = sanitize_title( strtolower( $names[ $name ]['plural'] ) );
+
+		add_rewrite_rule(
+			'category/' . $slug . '/(.+?)/?$',
+			'index.php?post_type=' . $uc_object . '&category_name=$matches[1]',
+			'top'
+		);
 	}
 }
