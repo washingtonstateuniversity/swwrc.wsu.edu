@@ -1,5 +1,9 @@
 <section class="row side-right gutter pad-ends">
-	<h1>News</h1>
+
+	<?php $title = ( is_search() ) ? 'Search Results' : 'News'; ?>
+
+	<h1><?php echo esc_html( $title ); ?></h1>
+
 	<div class="column one">
 
 		<?php while ( have_posts() ) : the_post(); ?>
