@@ -145,15 +145,18 @@ function display_tag_filters( $post_type ) {
  * @since 0.4.16
  */
 function rewrite_rules() {
-	$names = get_option( 'wsuwp_uc_names', false );
-
 	foreach ( wsuwp_uc_get_object_type_slugs() as $uc_object ) {
-		$name = ( 'wsuwp_uc_person' === $uc_object ) ? 'people' : substr( $uc_object, strlen( 'wsuwp_uc_' ) );
-		$slug = sanitize_title( strtolower( $names[ $name ]['plural'] ) );
+		$slug = get_post_type_object( $uc_object )->rewrite['slug'];
 
 		add_rewrite_rule(
-			'category/' . $slug . '/(.+?)/?$',
+			$slug . '/category/(.+?)/?$',
 			'index.php?post_type=' . $uc_object . '&category_name=$matches[1]',
+			'top'
+		);
+
+		add_rewrite_rule(
+			$slug . '/tag/(.+?)/?$',
+			'index.php?post_type=' . $uc_object . '&tag=$matches[1]',
 			'top'
 		);
 	}
