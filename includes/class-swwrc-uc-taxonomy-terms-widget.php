@@ -43,31 +43,34 @@ class SWWRC_UC_Taxonomy_Terms_Widget extends WP_Widget {
 		}
 
 		if ( ! in_array( $instance['taxonomy'], array( 'post_tag', 'category' ), true ) ) {
-			return;
+			return '';
 		}
+
+		$terms = get_terms( $instance['taxonomy'], array(
+			'post_type' => $instance['post_type'],
+		) );
+
+		if ( empty( $terms ) && is_wp_error( $terms ) ) {
+			return '';
+		}
+
+		$home = trailingslashit( get_home_url() );
+		$post_type_slug = get_post_type_object( $instance['post_type'] )->rewrite['slug'];
+		$taxonomy_slug = get_taxonomy( $instance['taxonomy'] )->rewrite['slug'];
+		$url_base = $home . $post_type_slug . '/' . $taxonomy_slug . '/';
 		?>
 
 		<aside class="widget">
 
 			<header><?php echo esc_html( $instance['title'] ); ?></header>
 
-			<?php
-			$terms = get_terms( $instance['taxonomy'], array(
-				'post_type' => $instance['post_type'],
-			) );
-
-			if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-				?>
-				<ul>
-					<?php foreach ( $terms as $term ) { ?>
-					<li>
-						<a href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>"><?php echo esc_html( $term->name ); ?></a>
-					</li>
-					<?php } ?>
-				</ul>
-				<?php
-			}
-			?>
+			<ul>
+				<?php foreach ( $terms as $term ) { ?>
+				<li>
+					<a href="<?php echo esc_url( $url_base . $term->slug . '/' ); ?>"><?php echo esc_html( $term->name ); ?></a>
+				</li>
+				<?php } ?>
+			</ul>
 
 		</aside>
 
