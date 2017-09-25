@@ -142,7 +142,7 @@ function display_tag_filters( $post_type ) {
 /**
  * Adds rewrite rules for University Center post type category term archive page views.
  *
- * @since 0.4.16
+ * @since 0.5.0
  */
 function rewrite_rules() {
 	foreach ( wsuwp_uc_get_object_type_slugs() as $uc_object ) {
