@@ -33,12 +33,13 @@ class SWWRC_UC_Taxonomy_Terms_Widget extends WP_Widget {
 		);
 
 		$instance = shortcode_atts( $default_instance, $instance );
+		$post_types = array_merge( wsuwp_uc_get_object_type_slugs(), array( 'post' ) );
 
 		if ( empty( $instance['post_type'] ) || empty( $instance['taxonomy'] ) ) {
 			return '';
 		}
 
-		if ( ! in_array( $instance['post_type'], wsuwp_uc_get_object_type_slugs(), true ) ) {
+		if ( ! in_array( $instance['post_type'], $post_types, true ) ) {
 			return '';
 		}
 
@@ -55,9 +56,15 @@ class SWWRC_UC_Taxonomy_Terms_Widget extends WP_Widget {
 		}
 
 		$home = trailingslashit( get_home_url() );
-		$post_type_slug = get_post_type_object( $instance['post_type'] )->rewrite['slug'];
 		$taxonomy_slug = get_taxonomy( $instance['taxonomy'] )->rewrite['slug'];
-		$url_base = $home . $post_type_slug . '/' . $taxonomy_slug . '/';
+
+		if ( 'post' === $instance['post_type'] ) {
+			$url_base = $home . $taxonomy_slug . '/';
+		} else {
+			$post_type_slug = get_post_type_object( $instance['post_type'] )->rewrite['slug'];
+			$url_base = $home . $post_type_slug . '/' . $taxonomy_slug . '/';
+		}
+
 		?>
 
 		<aside class="widget">
@@ -104,6 +111,7 @@ class SWWRC_UC_Taxonomy_Terms_Widget extends WP_Widget {
 			<select class="widefat"
 					id="<?php echo esc_attr( $this->get_field_id( 'post_type' ) ); ?>"
 					name="<?php echo esc_attr( $this->get_field_name( 'post_type' ) ); ?>">
+				<option value="post" <?php selected( $post_type, 'post' ); ?>>Posts</option>
 				<?php foreach ( wsuwp_uc_get_object_type_slugs() as $uc_object ) { ?>
 				<?php $object = get_post_type_object( $uc_object ); ?>
 				<option value="<?php echo esc_attr( $uc_object ); ?>" <?php selected( $post_type, $uc_object ); ?>><?php echo esc_html( $object->label ); ?></option>
