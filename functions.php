@@ -4,6 +4,7 @@ include_once( __DIR__ . '/includes/plugin-swwrc-video.php' );
 include_once( __DIR__ . '/includes/custom-search.php' );
 include_once( __DIR__ . '/includes/university-center-objects.php' );
 include_once( __DIR__ . '/includes/content-syndicate.php' );
+include_once( __DIR__ . '/includes/class-swwrc-uc-taxonomy-terms-widget.php' );
 
 add_filter( 'spine_child_theme_version', 'wrc_theme_version' );
 /**
@@ -33,18 +34,6 @@ function swwrc_child_enqueue_scripts() {
 	}
 }
 
-add_action( 'pre_get_posts', 'projects_104b' );
-/**
- * Query the `wsuwp_uc_project` post type for the 104b category archive.
- */
-function projects_104b( $query ) {
-	if ( is_category( '104b' ) && $query->is_main_query() ) {
-		$query->set( 'post_type', array(
-			'wsuwp_uc_project',
-		) );
-	}
-}
-
 add_filter( 'terms_clauses', 'swwrc_post_type_terms_clauses', 10, 3 );
 /**
  * Extend `get_terms` with a `post_type` parameter.
@@ -54,7 +43,7 @@ add_filter( 'terms_clauses', 'swwrc_post_type_terms_clauses', 10, 3 );
  * @param string $clauses
  * @param string $taxonomy
  * @param array  $args
-  *
+ *
  * @return string
  */
 function swwrc_post_type_terms_clauses( $clauses, $taxonomy, $args ) {

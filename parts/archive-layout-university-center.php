@@ -1,12 +1,8 @@
 <section class="row side-right gutter pad-ends">
 
-	<?php $post_type = ( get_queried_object() ) ? get_queried_object() : false; ?>
-
-	<h1><?php echo esc_html( $post_type->label ); ?></h1>
+	<h1><?php post_type_archive_title(); ?></h1>
 
 	<div class="column one">
-
-		<?php SWWRC\University_Center_Objects\display_tag_filters( $post_type->name ); // @codingStandardsIgnoreLine ?>
 
 		<div>
 
@@ -22,7 +18,13 @@
 
 	<div class="column two">
 
-		<?php get_sidebar(); ?>
+		<?php
+		$post_type = $wp_query->query['post_type'];
+
+		if ( is_active_sidebar( "sidebar_{$post_type}" ) ) {
+			dynamic_sidebar( "sidebar_{$post_type}" );
+		}
+		?>
 
 	</div><!--/column two-->
 
