@@ -208,27 +208,40 @@ h1.article-title {
 	visibility: hidden;
 	text-align: left;
 	position: absolute;
-	background-color: #fff;
-	border-left: 1px solid #003286;
-	top: 78px;
+	background-color: rgba(255, 255, 255, .8);
+	border-left: 5px solid #003286;
+	top: 69px;
+	margin-left: -20px;
+	padding-left: 14px;
+}
+
+.home .main-menu ul li ul {
+	top: 80px;
+}
+
+.main-menu ul li ul li {
+  	border-bottom: 1px rgba(127, 127, 127, .2) solid;
+}
+
+.main-menu ul li ul li:last-of-type {
+	border-bottom: 0;
 }
 
 .main-menu ul li:hover ul {
 	padding: 0;
-	background-color: #fff;
 	display: block;
 	visibility: visible;
 	opacity: 1;
 	width: 300px;
 }
 
-.main-menu ul li li {
-	margin-left: 1px;
-	display: block;
+.main-menu ul li ul li:hover {
+	background: #fff;
 }
 
-.main-menu ul li li a {
-	padding: 14px;
+.main-menu ul li ul li {
+	margin-left: 1px;
+	display: block;
 }
 
 .main-menu .searchform {
