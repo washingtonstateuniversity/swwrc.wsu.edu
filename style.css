@@ -146,7 +146,7 @@ h1.article-title {
 	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 	font-size: 1.2em;
 	width: 100%;
-	background-color: rgba(255, 255, 255, .8);
+	background-color: #fff;
 	top: 0;
 	z-index: 200;
 	position: fixed;
@@ -188,7 +188,6 @@ h1.article-title {
 	padding: 23px 15px;
 	color: #2a64ac;
 	display: block;
-	height: 100%;
 }
 
 .main-menu li a:hover {
@@ -205,43 +204,27 @@ h1.article-title {
 
 .main-menu ul li ul {
 	display: none;
-	visibility: hidden;
 	text-align: left;
 	position: absolute;
-	background-color: rgba(255, 255, 255, .8);
+	background-color: #fff;
 	border-left: 5px solid #003286;
-	top: 69px;
 	margin-left: -20px;
-	padding-left: 14px;
+	padding: 0;
+	width: 300px;
 }
 
-.home .main-menu ul li ul {
-	top: 80px;
+.main-menu ul li:hover ul {
+	display: block;
 }
 
 .main-menu ul li ul li {
 	border-bottom: 1px rgba(127, 127, 127, .2) solid;
+	display: block;
+	margin-left: 1px;
 }
 
 .main-menu ul li ul li:last-of-type {
 	border-bottom: 0;
-}
-
-.main-menu ul li:hover ul {
-	padding: 0;
-	display: block;
-	visibility: visible;
-	opacity: 1;
-	width: 300px;
-}
-
-.main-menu ul li ul li:hover {
-	background: #fff;
-}
-
-.main-menu ul li ul li {
-	margin-left: 1px;
-	display: block;
 }
 
 .main-menu .searchform {
@@ -502,10 +485,6 @@ h1.article-title {
 
 .home .main-menu .menu-position {
 	width: 100%;
-}
-
-.home .main-menu li a {
-	padding: 29px 15px;
 }
 
 .home h1 {
