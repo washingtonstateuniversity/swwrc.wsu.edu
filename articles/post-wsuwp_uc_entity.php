@@ -10,24 +10,27 @@
 
 	<?php if ( ! is_singular() ) : ?>
 	<h2 class="article-title">
-		<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 	</h2>
 
 	<div class="article-summary">
-		<?php
-		if ( has_post_thumbnail() ) {
-			?><figure class="article-thumbnail"><?php the_post_thumbnail( array( 132, 132, true ) ); ?></figure><?php
-		}
+		<?php if ( has_post_thumbnail() ) { ?>
+		<figure class="article-thumbnail"><?php the_post_thumbnail( array( 132, 132, true ) ); ?></figure>
+		<?php } ?>
 
-		the_content();
-		?>
+		<?php the_content(); ?>
 	</div><!-- .article-summary -->
 	<?php else : ?>
 	<div class="article-body">
+
+		<?php if ( has_post_thumbnail() ) { ?>
 		<figure class="article-thumbnail"><?php the_post_thumbnail( 'thumbnail' ); ?></figure>
+		<?php } ?>
+
 		<div class="the-content">
 			<?php the_content(); ?>
 		</div>
+
 	</div>
 	<?php endif; ?>
 
