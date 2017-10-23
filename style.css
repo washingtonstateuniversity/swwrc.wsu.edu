@@ -209,7 +209,7 @@ h1.article-title {
 	text-align: left;
 	position: absolute;
 	background-color: rgba(255, 255, 255, .8);
-	border-left: 5px solid #003286;
+	border-left: 1px solid #003286;
 	top: 69px;
 	margin-left: -20px;
 	padding-left: 14px;
@@ -220,7 +220,7 @@ h1.article-title {
 }
 
 .main-menu ul li ul li {
-  	border-bottom: 1px rgba(127, 127, 127, .2) solid;
+	border-bottom: 1px rgba(127, 127, 127, .2) solid;
 }
 
 .main-menu ul li ul li:last-of-type {
@@ -239,7 +239,7 @@ h1.article-title {
 	background: #fff;
 }
 
-.main-menu ul li ul li {
+.main-menu ul li li {
 	margin-left: 1px;
 	display: block;
 }
