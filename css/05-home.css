@@ -121,6 +121,7 @@
 		float: left;
 		box-sizing: border-box;
 		margin-right: 1em;
+		min-height: 250px;
 	}
 }
 
