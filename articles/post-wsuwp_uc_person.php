@@ -13,11 +13,15 @@
 			</h2>
 
 			<?php if ( ! empty( $display_data['title'] ) ) { ?>
-				<div class="person-title"><?php echo esc_html( $display_data['title'] ); ?></div>
+				<div class="person-meta person-title"><?php echo esc_html( $display_data['title'] ); ?></div>
 			<?php } ?>
 
 			<?php if ( ! empty( $display_data['title_secondary'] ) ) { ?>
-				<div class="person-title-secondary"><?php echo esc_html( $display_data['title_secondary'] ); ?></div>
+				<div class="person-meta person-title-secondary"><?php echo esc_html( $display_data['title_secondary'] ); ?></div>
+			<?php } ?>
+
+			<?php if ( ! empty( $display_data['office'] ) ) { ?>
+				<div class="person-meta person-office"><?php echo esc_html( $display_data['office'] ); ?></div>
 			<?php } ?>
 		</hgroup>
 	</header>
