@@ -19,6 +19,10 @@
 			<?php if ( ! empty( $display_data['title_secondary'] ) ) { ?>
 				<div class="person-title-secondary"><?php echo esc_html( $display_data['title_secondary'] ); ?></div>
 			<?php } ?>
+
+			<?php if ( ! empty( $display_data['office'] ) ) { ?>
+				<div class="person-meta person-office"><?php echo esc_html( $display_data['office'] ); ?></div>
+			<?php } ?>
 		</hgroup>
 	</header>
 
