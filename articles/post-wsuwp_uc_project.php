@@ -22,10 +22,6 @@
 
 		<div class="article-body">
 
-			<?php if ( has_post_thumbnail() ) { ?>
-			<figure class="article-thumbnail"><?php the_post_thumbnail( 'thumbnail' ); ?></figure>
-			<?php } ?>
-
 			<div class="the-content">
 				<?php the_content(); ?>
 			</div>
