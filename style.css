@@ -688,6 +688,12 @@ h1.article-title {
 	border-bottom: 1px rgba(127, 127, 127, .2) solid;
 }
 
+.archive.post-type-archive-wsuwp_uc_project article:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
 .archive section article h2.article-title {
 	padding-bottom: .1em;
 }
@@ -724,20 +730,27 @@ h1.article-title {
 }
 
 .post-type-archive-wsuwp_uc_person .row:not(.unscale) .column figure,
-.post-type-archive-wsuwp_uc_person figure.article-thumbnail {
+.post-type-archive-wsuwp_uc_person figure.article-thumbnail,
+.post-type-archive-wsuwp_uc_project .article-thumbnail {
 	height: 120px;
 	width: 120px;
 	overflow: hidden;
 	display: block;
-	margin-right: .8rem;
+	margin: 0 .8rem 5px 0;
 }
 
-.wsuwp_uc_person hgroup > * {
+.wsuwp_uc_person hgroup > *,
+.post-type-archive-wsuwp_uc_project .article-title {
 	margin-left: calc(120px + .8rem);
 }
 
+.post-type-archive-wsuwp_uc_project .article-title {
+	padding-top: 0;
+}
+
 .wsuwp_uc_person .article-thumbnail,
-.wsuwp_uc_person .article-thumbnail > * {
+.wsuwp_uc_person .article-thumbnail > *,
+.post-type-archive-wsuwp_uc_project .article-thumbnail .article-title {
 	margin-left: 0;
 }
 
