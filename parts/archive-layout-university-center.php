@@ -1,6 +1,12 @@
 <section class="row side-right gutter pad-ends">
 
-	<h1><?php post_type_archive_title(); ?></h1>
+	<h1><?php
+	if ( is_category() || is_tag() ) {
+		single_term_title();
+	} else {
+		post_type_archive_title();
+	}
+	?></h1>
 
 	<div class="column one">
 
