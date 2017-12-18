@@ -149,12 +149,32 @@ function rewrite_rules() {
 	foreach ( wsuwp_uc_get_object_type_slugs() as $uc_object ) {
 		$slug = get_post_type_object( $uc_object )->rewrite['slug'];
 
+		// Rules for the `wsuwp_uc_project` post type.
+		if ( 'wsuwp_uc_project' === $uc_object ) {
+
+			// Category and year archives.
+			add_rewrite_rule(
+				$slug . '/category/(.+?)/([0-9]{4})/?$',
+				'index.php?post_type=' . $uc_object . '&category_name=$matches[1]&year=$matches[2]',
+				'top'
+			);
+
+			// Paged category archives.
+			add_rewrite_rule(
+				$slug . '/category/(.+?)/page/?([0-9]{1,})/?$',
+				'index.php?post_type=' . $uc_object . '&category_name=$matches[1]&paged=$matches[2]',
+				'top'
+			);
+		}
+
+		// Category archives for all University Center post types.
 		add_rewrite_rule(
 			$slug . '/category/(.+?)/?$',
 			'index.php?post_type=' . $uc_object . '&category_name=$matches[1]',
 			'top'
 		);
 
+		// Tag archives for all University Center post types.
 		add_rewrite_rule(
 			$slug . '/tag/(.+?)/?$',
 			'index.php?post_type=' . $uc_object . '&tag=$matches[1]',
