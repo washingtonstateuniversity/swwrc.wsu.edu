@@ -6,6 +6,7 @@ add_filter( 'wsuwp_uc_people_to_add_to_content', 'SWWRC\University_Center_Object
 add_filter( 'wsuwp_uc_people_sort_items', 'SWWRC\University_Center_Objects\sort_syndicate_people' );
 add_action( 'init', 'SWWRC\University_Center_Objects\rewrite_rules', 11 );
 add_action( 'init', 'SWWRC\University_Center_Objects\register_sidebars', 11 );
+add_action( 'pre_get_posts', 'SWWRC\University_Center_Objects\filter_projects_query', 11 );
 
 /**
  * Sort a University Center object's associated people alphabetically by last name.
@@ -187,3 +188,24 @@ function register_sidebars() {
 add_action( 'widgets_init', function() {
 	register_widget( 'SWWRC_UC_Taxonomy_Terms_Widget' );
 } );
+
+/**
+ * Filter Project archive view queries.
+ *
+ * Ordered descending by date with the posts_per_page limit set to 10.
+ *
+ * @since 0.5.5
+ *
+ * @param WP_Query $query
+ */
+function filter_projects_query( $query ) {
+	if ( ! $query->is_main_query() || is_admin() ) {
+		return;
+	}
+
+	if ( $query->is_post_type_archive( 'wsuwp_uc_project' ) ) {
+		$query->set( 'orderby', 'date' );
+		$query->set( 'order', 'DESC' );
+		$query->set( 'posts_per_page', 10 );
+	}
+}
