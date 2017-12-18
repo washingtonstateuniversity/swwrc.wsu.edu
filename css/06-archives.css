@@ -104,6 +104,10 @@
 	display: none;
 }
 
+.post-type-archive-wsuwp_uc_project footer.main-footer.archive-footer {
+	display: block;
+}
+
 .post-type-archive-wsuwp_uc_person .row:not(.unscale) .column figure,
 .post-type-archive-wsuwp_uc_person figure.article-thumbnail,
 .post-type-archive-wsuwp_uc_project .article-thumbnail {
