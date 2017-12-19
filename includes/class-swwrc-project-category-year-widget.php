@@ -33,7 +33,7 @@ class SWWRC_Project_Category_Year_Widget extends WP_Widget {
 
 		$instance = shortcode_atts( $default_instance, $instance );
 
-		if ( empty( $instance['category'] ) ) {
+		if ( empty( $instance['category'] ) || ! is_category( $instance['category'] ) ) {
 			return '';
 		}
 
