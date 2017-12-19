@@ -5,6 +5,7 @@ require_once __DIR__ . '/includes/custom-search.php';
 require_once __DIR__ . '/includes/university-center-objects.php';
 require_once __DIR__ . '/includes/content-syndicate.php';
 require_once __DIR__ . '/includes/class-swwrc-uc-taxonomy-terms-widget.php';
+require_once __DIR__ . '/includes/class-swwrc-project-category-year-widget.php';
 
 add_filter( 'spine_child_theme_version', 'wrc_theme_version' );
 /**

@@ -201,12 +201,14 @@ function register_sidebars() {
 }
 
 /**
- * Registers the custom widget used by the theme.
+ * Registers the custom widgets used by the theme.
  *
  * @since 0.5.0
+ * @since 0.5.5 Registers the 'SWWRC_Projects_By_Year_Widget' widget.
  */
 add_action( 'widgets_init', function() {
 	register_widget( 'SWWRC_UC_Taxonomy_Terms_Widget' );
+	register_widget( 'SWWRC_Project_Category_Year_Widget' );
 } );
 
 /**
