@@ -1,7 +1,11 @@
 <section class="row side-right gutter pad-ends">
 
 	<h1><?php
-	if ( is_category() || is_tag() ) {
+	if ( is_category() && is_year() ) {
+		single_cat_title();
+		echo ' - ';
+		the_time( 'Y' );
+	} elseif ( is_category() || is_tag() ) {
 		single_term_title();
 	} else {
 		post_type_archive_title();
