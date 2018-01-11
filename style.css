@@ -685,7 +685,11 @@ h1.article-title {
 	clear: none;
 	padding: .7em;
 	margin: .8em;
-	border-bottom: 1px rgba(127, 127, 127, .2) solid;
+}
+
+.archive.post-type-archive-wsuwp_uc_project article + article {
+	border-top: 1px rgba(127, 127, 127, .2) solid;
+	padding-top: 1.4em;
 }
 
 .archive.post-type-archive-wsuwp_uc_project article:after {
@@ -729,6 +733,10 @@ h1.article-title {
 	display: none;
 }
 
+.post-type-archive-wsuwp_uc_project footer.main-footer.archive-footer {
+	display: block;
+}
+
 .post-type-archive-wsuwp_uc_person .row:not(.unscale) .column figure,
 .post-type-archive-wsuwp_uc_person figure.article-thumbnail,
 .post-type-archive-wsuwp_uc_project .article-thumbnail {
@@ -752,6 +760,30 @@ h1.article-title {
 .wsuwp_uc_person .article-thumbnail > *,
 .post-type-archive-wsuwp_uc_project .article-thumbnail .article-title {
 	margin-left: 0;
+}
+
+.seed-grant-year-heading {
+	font-size: 2.2em;
+	line-height: 1.5;
+	overflow: hidden;
+	position: relative;
+	white-space: nowrap;
+}
+
+.seed-grant-year-heading:after {
+	background: #d8d8d8;
+	content: "";
+	display: inline-block;
+	height: 1px;
+	margin-bottom: .2em;
+	margin-left: 10px;
+	position: relative;
+	vertical-align: middle;
+	width: 100%;
+}
+
+article + .seed-grant-year-heading {
+	margin-top: 4rem;
 }
 
 .single-wsuwp_uc_person .prevnext,

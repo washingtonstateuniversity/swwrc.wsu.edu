@@ -119,7 +119,7 @@ class SWWRC_UC_Taxonomy_Terms_Widget extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>">Post Type:</label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>">Taxonomy:</label>
 			<select class="widefat"
 					id="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>"
 					name="<?php echo esc_attr( $this->get_field_name( 'taxonomy' ) ); ?>">
