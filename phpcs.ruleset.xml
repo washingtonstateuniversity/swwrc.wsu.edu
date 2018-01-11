@@ -3,7 +3,7 @@
     <!-- Config flags for PHPCS
      s flag: Show sniff codes in all reports.
      v flag: Print verbose output.
--->
+    -->
     <arg value="sv"/>
 
     <!-- Check only PHP files -->
@@ -17,11 +17,16 @@
     <rule ref="WordPress-Extra">
         <exclude name="WordPress.NamingConventions.ValidFunctionName" />
         <exclude name="WordPress.Files.FileName" />
+        <exclude name="Squiz.Commenting.LongConditionClosingComment" />
+        <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
         <exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen" />
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterEnd" />
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
+        <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
+        <exclude name="WordPress.WhiteSpace.PrecisionAlignment.Found" />
+        <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning" />
     </rule>
 </ruleset>
