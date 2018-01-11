@@ -16,7 +16,21 @@
 
 		<div>
 
+		<?php $project_years = array(); ?>
+
 		<?php while ( have_posts() ) : the_post(); ?>
+
+			<?php
+			if ( is_post_type_archive( 'wsuwp_uc_project' ) && is_category( 'seed-grants' ) && ! is_year() ) {
+				$project_year = get_the_date( 'Y', get_the_ID() );
+				if ( ! in_array( $project_year, $project_years, true ) ) {
+					$project_years[] = $project_year;
+					?>
+					<header class="seed-grant-year-heading"><?php echo esc_html( $project_year ); ?></header>
+					<?php
+				}
+			}
+			?>
 
 			<?php get_template_part( 'articles/post', get_post_type() ); ?>
 
