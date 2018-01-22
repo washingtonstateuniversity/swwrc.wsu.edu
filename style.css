@@ -775,7 +775,6 @@ h1.article-title {
 	content: "";
 	display: inline-block;
 	height: 1px;
-	margin-bottom: .2em;
 	margin-left: 10px;
 	position: relative;
 	vertical-align: middle;
