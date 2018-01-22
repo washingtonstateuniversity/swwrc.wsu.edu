@@ -20,13 +20,21 @@
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php
+			<?php // Customizations for the "Seed Grants" category archive.
 			if ( is_post_type_archive( 'wsuwp_uc_project' ) && is_category( 'seed-grants' ) && ! is_year() ) {
 				$project_year = get_the_date( 'Y', get_the_ID() );
 				if ( ! in_array( $project_year, $project_years, true ) ) {
 					$project_years[] = $project_year;
+					$years = count( $project_years );
+					if ( 1 === $years ) {
+						$heading = 'Current';
+					} elseif ( 2 === $years ) {
+						$heading = $project_year;
+					} elseif ( 3 === $years ) {
+						break;
+					}
 					?>
-					<header class="seed-grant-year-heading"><?php echo esc_html( $project_year ); ?></header>
+					<header class="seed-grant-year-heading"><?php echo esc_html( $heading ); ?></header>
 					<?php
 				}
 			}
