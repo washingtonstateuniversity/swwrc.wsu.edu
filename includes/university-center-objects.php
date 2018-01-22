@@ -228,6 +228,9 @@ function filter_projects_query( $query ) {
 	if ( $query->is_post_type_archive( 'wsuwp_uc_project' ) ) {
 		$query->set( 'orderby', 'date' );
 		$query->set( 'order', 'DESC' );
-		$query->set( 'posts_per_page', 10 );
+
+		if ( ! $query->is_category( 'seed-grants' ) ) {
+			$query->set( 'posts_per_page', 10 );
+		}
 	}
 }
