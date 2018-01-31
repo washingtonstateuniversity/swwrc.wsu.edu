@@ -27,9 +27,9 @@
 					$project_years[] = $project_year;
 					$years = count( $project_years );
 					if ( 1 === $years ) {
-						$heading = 'Current';
+						$heading = 'Current Projects';
 					} elseif ( 2 === $years ) {
-						$heading = $project_year;
+						$heading = 'Past Projects';
 					} elseif ( 3 === $years ) {
 						break;
 					}
