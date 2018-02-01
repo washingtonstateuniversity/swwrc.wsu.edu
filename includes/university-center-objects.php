@@ -234,3 +234,20 @@ function filter_projects_query( $query ) {
 		}
 	}
 }
+
+/**
+ * Returns a formatted string of people associated with a given post.
+ *
+ * @since 0.5.5
+ *
+ * @param int $post_id ID of the post for which to retrieve associated people.
+ *
+ * @return string
+ */
+function project_authors( $post_id ) {
+	$authors = wsuwp_uc_get_object_people( $post_id );
+	$author_names = array_column( $authors, 'name' );
+	$author_string = '<span class="article-authors">' . implode( ', ', $author_names ) . '.</span> ';
+
+	return $author_string;
+}
