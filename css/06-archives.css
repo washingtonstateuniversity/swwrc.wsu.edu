@@ -123,7 +123,8 @@
 }
 
 .wsuwp_uc_person hgroup > *,
-.post-type-archive-wsuwp_uc_project .article-title {
+.post-type-archive-wsuwp_uc_project .article-title,
+.category-seed-grants .article-header {
 	margin-left: calc(120px + .8rem);
 }
 
@@ -158,4 +159,9 @@
 
 article + .seed-grant-year-heading {
 	margin-top: 4rem;
+}
+
+.category-seed-grants .article-header h2 {
+	font-size: 1.5em;
+	padding-top: 0;
 }
