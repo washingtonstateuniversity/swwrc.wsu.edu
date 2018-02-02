@@ -16,7 +16,7 @@ add_filter( 'spine_child_theme_version', 'wrc_theme_version' );
  * @return string
  */
 function wrc_theme_version() {
-	return '0.5.4';
+	return '0.5.5';
 }
 
 add_action( 'wp_enqueue_scripts', 'swwrc_child_enqueue_scripts', 21 );
