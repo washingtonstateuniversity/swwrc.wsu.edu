@@ -36,7 +36,7 @@
 }
 
 .archive.post-type-archive-wsuwp_uc_person article {
-	height: 130px;
+	min-height: 130px;
 	clear: none;
 	padding: .7em;
 	margin: .8em;
@@ -162,6 +162,10 @@ article + .seed-grant-year-heading {
 }
 
 .category-seed-grants .article-header h2 {
-	font-size: 1.5em;
-	padding-top: 0;
+	padding: 0;
+}
+
+.category-seed-grants .article-header span {
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 1em;
 }
