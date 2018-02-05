@@ -5,7 +5,7 @@ Author: WSU University Communications
 Author URI: http://web.wsu.edu
 Description: A Spine child theme for the Water Research Center
 Template: spine
-Version: 0.5.4
+Version: 0.5.5
 License: GPLv2 (or later)
 Tags: light
 */
@@ -140,6 +140,10 @@ main .two aside {
 
 h1.article-title {
 	padding-top: 0;
+}
+
+.archive  h2 {
+	font-size: 1.5em;
 }
 
 .main-menu {
@@ -661,7 +665,7 @@ h1.article-title {
 }
 
 .archive.post-type-archive-wsuwp_uc_person article {
-	height: 130px;
+	min-height: 130px;
 	clear: none;
 	padding: .7em;
 	margin: .8em;
@@ -748,7 +752,8 @@ h1.article-title {
 }
 
 .wsuwp_uc_person hgroup > *,
-.post-type-archive-wsuwp_uc_project .article-title {
+.post-type-archive-wsuwp_uc_project .article-title,
+.category-seed-grants .article-header {
 	margin-left: calc(120px + .8rem);
 }
 
@@ -775,7 +780,6 @@ h1.article-title {
 	content: "";
 	display: inline-block;
 	height: 1px;
-	margin-bottom: .2em;
 	margin-left: 10px;
 	position: relative;
 	vertical-align: middle;
@@ -784,6 +788,15 @@ h1.article-title {
 
 article + .seed-grant-year-heading {
 	margin-top: 4rem;
+}
+
+.category-seed-grants .article-header h2 {
+	padding: 0;
+}
+
+.category-seed-grants .article-header span {
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 1em;
 }
 
 .single-wsuwp_uc_person .prevnext,
