@@ -124,7 +124,7 @@
 
 .wsuwp_uc_person hgroup > *,
 .post-type-archive-wsuwp_uc_project .article-title,
-.category-seed-grants .article-header {
+.post-type-archive-wsuwp_uc_project .category-seed-grants .article-header {
 	margin-left: calc(120px + .8rem);
 }
 
