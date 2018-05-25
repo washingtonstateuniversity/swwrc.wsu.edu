@@ -123,8 +123,7 @@
 }
 
 .wsuwp_uc_person hgroup > *,
-.post-type-archive-wsuwp_uc_project .article-title,
-.post-type-archive-wsuwp_uc_project .category-seed-grants .article-header {
+.post-type-archive-wsuwp_uc_project .article-header {
 	margin-left: calc(120px + .8rem);
 }
 
@@ -161,11 +160,11 @@ article + .seed-grant-year-heading {
 	margin-top: 4rem;
 }
 
-.category-seed-grants .article-header h2 {
+.post-type-archive-wsuwp_uc_project .article-header h2 {
 	padding: 0;
 }
 
-.category-seed-grants .article-header span {
+.post-type-archive-wsuwp_uc_project .article-header span {
 	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 	font-size: 1em;
 }
