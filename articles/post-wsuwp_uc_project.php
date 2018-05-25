@@ -14,7 +14,6 @@
 		<figure class="article-thumbnail"><?php the_post_thumbnail( array( 132, 132, true ) ); ?></figure>
 		<?php } ?>
 
-		<?php if ( is_category( 'seed-grants' ) ) { ?>
 		<header class="article-header">
 			<h2>
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -22,11 +21,6 @@
 			<p><?php echo wp_kses_post( SWWRC\University_Center_Objects\project_authors( get_the_ID() ) ); ?>
 			<span class="article-year">(<?php the_time( 'Y' ); ?>)</span></p>
 		</header>
-		<?php } else { ?>
-		<h2 class="article-title">
-			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		</h2>
-		<?php } ?>
 
 	<?php else : ?>
 
