@@ -8,6 +8,15 @@ add_action( 'init', 'SWWRC\University_Center_Objects\rewrite_rules', 11 );
 add_action( 'init', 'SWWRC\University_Center_Objects\register_sidebars', 11 );
 add_action( 'pre_get_posts', 'SWWRC\University_Center_Objects\filter_projects_query', 11 );
 
+add_filter( 'wsuwp_university_center_objects', 'SWWRC\University_Center_Objects\center_filter_objects', 11 );
+
+
+function center_filter_objects( $added_html ) {
+
+	return '<div class="center-object-wrapper">' . $added_html . '</div>';
+
+} // End added html
+
 /**
  * Sort a University Center object's associated people alphabetically by last name.
  *
